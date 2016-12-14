@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RDM</string>
+
+    <string name="android">Android</string>
+	<string name="iphone">iPhone</string>
+	<string name="ipad">iPad</string>
+
+	<string name="day">日</string>
+	<string name="week">周</string>
+	<string name="month">月</string>
+	<string name="all">全部</string>
+
+    <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
+    <string name="network_error">网络开小差，稍后再试</string>
+    <string name="network_error_info">如果网络正常，建议稍后片刻再试</string>
+	<string name="network_need_login">数据加载异常，请检查网络后点击重试！</string>
+    <string name="title_network_error">网络错误</string>
+    <string name="download_failed_retry">下载失败，请重试。</string>
+    <string name="application_not_install">该应用未安装</string>
+    <string name="application_crash_quit">很抱歉，程序出现异常，即将退出。</string>
+
+    <string name="loading">努力加载中...</string>
+    <string name="share">分享</string>
+	<string name="sending">发送中</string>
+    
+    <!-- buttons -->
+    <string name="btn_cancel">取消</string>
+    <string name="btn_retry">重试</string>
+    <string name="btn_exit">退出</string>
+    <string name="btn_submit">提交</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_upgrade">更新</string>
+    <string name="btn_download">下载</string>
+    <string name="btn_downloading">下载中</string>
+    <string name="btn_install">安装</string>
+    <string name="btn_installing">安装中</string>
+    <string name="btn_open">打开</string>
+	<string name="btn_later">下次再说</string>
+    <string name="btn_copy">复制</string>
+    <string name="btn_building">打包中</string>
+    <string name="btn_build_failed">构建失败</string>
+    <string name="btn_build_new_version">打最新包</string>
+
+	<!-- captions -->
+	<string name="caption_new_version">RDM客户端有最新版本，是否更新？</string>
+
+	<!-- share about -->
+	<string name="weixin_circle">朋友圈</string>
+	<string name="weixin_someone">微信好友</string>
+	<string name="share_title">分享给朋友</string>
+	<string name="no_support_weixin">手机未安装最新版本微信</string>
+	<string name="install_newest_weixin">是否前往安装最新版本的微信?</string>
+	<string name="install_weixin_yes">立即安装</string>
+	<string name="share_succ_title">分享成功！</string>
+	<string name="share_fail_title">分享失败！</string>
+	<string name="share_fail_net">由于网络原因，您此次未成功分享</string>
+	<string name="share_auth_denied">由于权限不足，您此次未成功分享</string>
+	<string name="share_user_cancel">您取消了此次分享</string>
+	
+	<string name="wx_share_thumb_fail">分享缩略图生成失败</string>
+	<string name="share_loading">分享</string>
+    <string name="initializing_content">正在生成分享信息, 请稍后&#8230;</string>
+    
+    <string name="permission_title">授权提示</string>
+	<string name="permission_hint_barcode">是否允许聚乐薄打开摄像头？</string>
+	<string name="permission_hint_call">是否允许聚乐薄使用拨号功能？</string>
+	<string name="phone_app_not_found">未找到拨号程序</string>
+	
+	
+	<string name="permission_agree">同意</string>
+	<string name="permission_disagree">拒绝</string>
+	
+	<!-- login  -->
+	<string name="login">登  录</string>
+	<string name="login_fail_title">登录失败！</string>
+	<string name="login_auth_denied">由于权限不足，您此次登录失败</string>
+	<string name="login_fail_net">由于网络原因，您此次登录失败</string>
+	<string name="login_user_cancel">您取消了此次登录！</string>
+	<string name="send">发送</string>
+	<string name="please_input_username">请输入用户名</string>
+	<string name="please_input_verifycode">请输入验证码</string>
+	<string name="pswd_not_empty">密码不能为空</string>
+    <string name="get_help_1">无法获取验证码，请联系管理员获取</string>
+    <string name="get_help_2">帮助</string>
+    <string name="get_help_3">。</string>
+
+    <string name="login_help_1">无法获取验证码？</string>
+    <string name="login_help_2">请按以下顺序解决：</string>
+    <string name="login_help_3">1.登录HR系统，查看手机号码是否正确，验证短信会发送到HR系统登录手机号码。</string>
+    <string name="login_help_4">2.若手机号为空或不正确，请邮件人力资源同事协助修改，修改好，第二天可正常接收验证码。</string>
+    <string name="login_help_5">3.若以上方法都不能解决问题，请咚咚联系：周子雄 或邮件：</string>
+
+    <string name="login_support_email">zhouzixiong@jd.com</string>
+    <string name="login_email_subject">RDM(安卓)登录有问题</string>
+
+	<string name="username">ERP账号</string>
+    <string name="password">ERP密码</string>
+    <string name="verify_code_get">获取验证码</string>
+    <string name="verify_code_resend_x">%s秒后重新获取</string>
+
+    <!-- main -->
+    <string name="product_list">产品列表</string>
+	<string name="product_detail">体验详情</string>
+	<string name="product_version_list">历史版本</string>
+
+	<string name="inner_test">内测体验</string>
+	<string name="user_feedback">用户反馈</string>
+	<string name="my_rdm">我的RDM</string>
+
+	<string name="product_intro">产品说明：</string>
+    <string name="version_title">体验标题：</string>
+	<string name="product_feature">版本特性：</string>
+
+    <string name="detail_client_x">%s客户端</string>
+    <string name="detail_download_notice">二维码仅限公司内部员工使用，请勿外传！</string>
+    <string name="detail_download_link">下载链接</string>
+
+	<string name="feed_back">反馈</string>
+	<string name="feed_back_type">意见反馈</string>
+    <string name="submit_feedback">提交反馈</string>
+    <string name="feed_back_type_1">系统问题</string>
+    <string name="feed_back_type_2">优化建议</string>
+    <string name="feed_back_type_3">其它</string>
+    <string name="feed_back_content">内容</string>
+    <string name="feed_back_content_hint">评价描述</string>
+    <string name="feed_back_other">其它</string>
+	<string name="feedback_reply_to_x">回复%s：</string>
+
+	<string name="feedback_today_num_x">今日反馈：%s条</string>
+
+	<!-- friend -->
+
+
+	<!-- announce -->
+	<!-- QA -->
+
+	<!-- follow -->
+
+	<string name="upload_photo">上传照片</string>
+	<string name="choose_img_from_album">从相册中选择</string>
+	<string name="take_photo">拍照</string>
+	<string name="setting">设置</string>
+    <string name="controll">个人设置</string>
+	<string name="rdm_version_check">检测更新</string>
+	<string name="already_latest_version">目前已是最新版本，无需更新</string>
+    <string name="download_latest">下载最新版本</string>
+    <string name="manager">管理者：</string>
+	<string name="version_latest_x">最新版本: %s</string>
+    <string name="version_x">版本: %s</string>
+	<string name="version_type_x">(%s)</string>
+	<string name="build_x">Build ID: %s</string>
+    <string name="publish_name_x">产品名称: %s</string>
+    <string name="build_time_x">创建时间: %s</string>
+    <string name="branch_x">分支: %s</string>
+    <string name="build_people_x">创建人: %s</string>
+	<string name="publish_date_x">发布日期: %s</string>
+	<string name="publish_time_x">发布时间: %s</string>
+	<string name="submit_succ">谢谢您的反馈</string>
+	<string name="no_empty_allowed">请填写反馈内容哦！</string>
+	<string name="please_input_content">请写下你的使用感受吧~</string>
+    <string name="image_save_successful">图片保存成功，请在相册里查找</string>
+    <string name="save_image">保存到本地</string>
+
+	<string name="wait_for_submit">正在提交, 请稍候&#8230;</string>
+
+    <string name="phone_model">手机型号:</string>
+    <string name="system_os">操作系统:</string>
+
+	<!-- contentDescription -->
+	<string name="image_cd_none"> </string>
+
+    <string name="setting_share">分享好友</string>
+    <string name="setting_feedback">反馈评价</string>
+    <string name="setting_clear_apk">清理安装包</string>
+    <string name="setting_clear_apk_done">安装包清理完成</string>
+
+	<string name="pack_up">收起</string>
+	<string name="spread">展开</string>
+    <string name="detail">产品体验详情</string>
+	<string name="detail_log">Log详情</string>
+	<string name="version_list_btn">查看历史版本</string>
+	<string name="daily_build">每日自动打包</string>
+    <string name="newest_build">最新打包</string>
+	<string name="zan_x">赞(%d)</string>
+	<string name="feedback_x">反馈(%d)</string>
+
+    <string name="no_newest_build">暂无最新打包</string>
+
+    <!-- 评价反馈 -->
+    <string name="from_x">来自V%1$s(%2$s,%3$s)</string>
+    <string name="comment_format1">%1$s(%2$s): %3$s</string>
+    <string name="comment_format2">%1$s(%2$s)回复%3$s(%4$s): %5$s</string>
+    <string name="comment_delete">删   除</string>
+    <string name="delete_failure_tip">删除失败，请刷新后重试</string>
+    <string name="footer_tip">已展示全部内容，RDM会继续更新市场反馈</string>
+    <string name="my_comment">我要反馈</string>
+
+    <string name="today_feedback">今日反馈</string>
+
+    <item type="id" name="type_fankui"/>
+    <item type="id" name="type_pinglun"/>
+</resources>

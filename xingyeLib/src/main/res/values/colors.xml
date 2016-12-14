@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="c_56595B">#56595B</color>
+    <color name="c_898E91">#898E91</color>
+    <color name="c_F0595E">#F0595E</color>
+    <color name="c_BB001B">#BB001B</color>
+    <color name="c_D74041">#D74041</color>
+    <color name="c_CE393A">#CE393A</color>
+    <color name="c_EE4A4F">#EE4A4F</color>
+    <color name="c_F2F2F2">#f2f2f2</color>
+    <color name="c_81B2D0">#81b2d0</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_DCDCDC">#DCDCDC</color>
+    <color name="c_3288E0">#3288E0</color>
+    <color name="c_FFFFFF">#FFFFFF</color>
+    <color name="c_000000">#000000</color>
+    <color name="c_B59E44">#B59E44</color>
+    <color name="c_C7C7C7">#C7C7C7</color>
+    <color name="c_BEBEBE">#BEBEBE</color>
+    <color name="c_D2D4D6">#D2D4D6</color>
+    <color name="c_EBEBEB">#EBEBEB</color>
+    <color name="c_79050D">#79050D</color>
+    <color name="c_F7F7F7">#f7f7f7</color>
+    <color name="c_F1F1F1">#F1F1F1</color>
+    <color name="c_444444">#444444</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_DD4445">#DD4445</color>
+    <color name="c_BDBDBD">#BDBDBD</color>
+
+
+    <color name="c_7FCCCCCC">#7FCCCCCC</color>
+    <color name="c_00000000">#00000000</color>
+    <color name="c_FF4F97F8">#ff4f97f8</color>
+    <color name="c_FFE5E5E5">#ffe5e5e5</color>
+    <color name="c_FF444444">#ff444444</color>
+    <color name="c_FF666666">#ff666666</color>
+    <color name="c_FF999999">#ff999999</color>
+    <color name="c_FFB2B2B2">#ffb2b2b2</color>
+    <color name="c_7FFFFFFF">#7fffffff</color>
+    <color name="c_01FFFFFF">#01ffffff</color>
+    <color name="c_FFFFFFFF">#ffffffff</color>
+
+    <color name="c_999">#999</color>
+
+</resources>
