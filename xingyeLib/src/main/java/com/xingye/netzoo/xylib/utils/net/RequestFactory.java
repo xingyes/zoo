@@ -80,8 +80,8 @@ public final class RequestFactory {
 		if( TextUtils.isEmpty(strUrl) || TextUtils.isEmpty(strMethod) )
 			return null;
 
-        strUrl = "https://www.baidu.com";
-        strMethod = "GET";
+//        strUrl = "https://www.baidu.com";
+//        strMethod = "GET";
 		MyApplication.getVersionInfo(mSelf.mContext);
 
 

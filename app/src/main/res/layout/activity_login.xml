@@ -1,6 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="loginVM"
+            type="com.xingye.netzoo.zooapplication.login.LoginViewModel"/>
+    </data>
 
     <ScrollView
         android:id="@+id/page_view"
@@ -33,10 +38,11 @@
                     android:layout_centerHorizontal="true"
                     android:paddingLeft="9dp"
                     android:textColor="#DA494A"
-                    android:text="hahahah"
+                    android:text="@{loginVM.tips}"
                     android:textSize="16dp"/>
 
                 <EditText
+                    android:text="@={loginVM.user}"
                     android:id="@+id/login_username"
                     android:layout_width="288dp"
                     android:layout_height="wrap_content"
@@ -51,6 +57,7 @@
                     android:textColor="@color/c_56595B"/>
 
                 <EditText
+                    android:text="@={loginVM.passwd}"
                     android:id="@+id/login_password"
                     android:layout_width="288dp"
                     android:layout_height="wrap_content"
@@ -74,20 +81,23 @@
                     android:layout_marginTop="8dp">
 
                     <Button
+                        android:enabled="@{!loginVM.smsSending}"
+                        android:onClick="@{(v) -> loginVM.sendSMS(v)}"
                         android:id="@+id/verify_code_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:background="@drawable/button_red"
                         android:paddingLeft="13dp"
                         android:paddingTop="8dp"
                         android:paddingRight="13dp"
                         android:paddingBottom="8dp"
-                        android:text="@string/verify_code_get"
-                        android:textColor="@color/c_FFFFFF"
+                        android:text="@{loginVM.verifyBtn}"
+                        android:background="@{loginVM.smsSending ? @drawable/button_gray:@drawable/button_red}"
+                        android:textColor="@{loginVM.smsSending ? @color/c_C7C7C7 :@color/c_FFFFFF}"
                         android:textSize="16dp"/>
 
                     <EditText
+                        android:text="@={loginVM.verifycode}"
                         android:id="@+id/verify_code_edit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -177,4 +187,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</layout>

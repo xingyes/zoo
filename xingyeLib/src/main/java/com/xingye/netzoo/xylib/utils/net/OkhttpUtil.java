@@ -9,6 +9,7 @@ import com.google.gson.reflect.TypeToken;
 import com.xingye.netzoo.xylib.utils.MyApplication;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
@@ -169,7 +170,8 @@ public class OkhttpUtil {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if(callback!=null) {
-                    callback.onResponse(call, gson.fromJson(response.body().charStream(), callback.getType()));
+                    JSONRespLogin base = gson.fromJson(response.body().string(), JSONRespLogin.class);
+                    callback.onResponse(call, base);
                 }
             }
         });
