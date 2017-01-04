@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="loginVM"
+            type="com.xingye.netzoo.zooapplication.login.LoginViewModel"/>
+    </data>
 
     <RelativeLayout
         android:id="@+id/popup_window_bottom_mask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/c_000000"
-        android:alpha="0.75"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:alpha="0.75">
 
         <LinearLayout
+            android:layout_alignParentBottom="true"
             android:id="@+id/popup_window_bottom_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +80,7 @@
 
             <TextView
                 android:id="@+id/support_email"
+                android:onClick="@{()->loginVM.sendEmail()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login_support_email"
@@ -95,13 +96,13 @@
         </LinearLayout>
 
         <ImageView
+            android:layout_alignTop="@id/popup_window_bottom_content"
             android:padding="10dp"
-            android:id="@+id/popup_window_bottom_close"
+            android:onClick="@{()->loginVM.dismissHelp()}"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:src="@mipmap/icon_close"/>
-
     </RelativeLayout>
 
-</RelativeLayout>
+</layout>

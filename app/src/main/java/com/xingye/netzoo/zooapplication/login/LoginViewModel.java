@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
+import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.net.Uri;
 import android.text.Spannable;
@@ -12,6 +13,7 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -24,6 +26,7 @@ import com.xingye.netzoo.xylib.utils.net.OkhttpUtil;
 import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.zooapplication.BR;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.databinding.LoginHelpBinding;
 import com.xingye.netzoo.zooapplication.utils.Config;
 
 import java.io.IOException;
@@ -54,6 +57,7 @@ public class LoginViewModel extends BaseObservable {
     private int  ticDown;
     private Runnable countDownRunnable;
     public static String helpTip;
+    public PopupWindow  popupWindow;
 
     public LoginViewModel(final Context atx)
     {
@@ -181,38 +185,6 @@ public class LoginViewModel extends BaseObservable {
     }
 
 
-    public void showHelpTips(View view,int level) {
-        View window = View.inflate(mContext,R.layout.login_help,null);
-        final PopupWindow popupWindow = new PopupWindow(window,
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
-        window.findViewById(R.id.popup_window_bottom_close).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupWindow.dismiss();
-            }
-        });
-        window.findViewById(R.id.support_email).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ait = new Intent(Intent.ACTION_SEND);
-                ait.setData(Uri.parse("mailto:zhouzixiong@jd.com"));
-                ait.putExtra(Intent.EXTRA_SUBJECT,"RDM(安卓）登录有问题");
-                mContext.startActivity(ait);
-            }
-        });
-        popupWindow.setFocusable(true);
-        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        popupWindow.setAnimationStyle(R.style.DialogAnimation);
-
-        View anchorView = view.getRootView();
-        for(int i = 1; i < level && anchorView!=null;i++)
-            anchorView = anchorView.getRootView();
-        popupWindow.showAtLocation(anchorView,Gravity.BOTTOM,0,0);
-//        popupWindow.showAtLocation();
-
-    }
-
     @BindingAdapter("helptip")
     public static void justSettext(TextView view, String tips)
     {
@@ -222,4 +194,37 @@ public class LoginViewModel extends BaseObservable {
         view.setText(wordtoSpan);
     }
 
+
+/*    popwindow  Databinding about */
+    public void showHelpTips(View view,int level) {
+        LoginHelpBinding helpbind =  DataBindingUtil.inflate(LayoutInflater.from(mContext),
+                R.layout.login_help,null,false);
+        popupWindow = new PopupWindow(helpbind.getRoot(),
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+
+        popupWindow.setFocusable(true);
+        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        popupWindow.setAnimationStyle(R.style.DialogAnimation);
+
+        View anchorView = view.getRootView();
+        for(int i = 1; i < level && anchorView!=null;i++)
+            anchorView = anchorView.getRootView();
+        popupWindow.showAtLocation(anchorView,Gravity.BOTTOM,0,0);
+    }
+
+
+    public void dismissHelp()
+    {
+        popupWindow.dismiss();
+        popupWindow = null;
+    }
+
+    public void sendEmail()
+    {
+        Intent ait = new Intent(Intent.ACTION_SEND);
+        ait.setData(Uri.parse("mailto:zhouzixiong@jd.com"));
+        ait.putExtra(Intent.EXTRA_SUBJECT,"RDM(安卓）登录有问题");
+        mContext.startActivity(ait);
+    }
 }
