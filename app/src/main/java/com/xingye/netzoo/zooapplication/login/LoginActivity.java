@@ -27,7 +27,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loginViewModel = new LoginViewModel(this);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_login);
+        LoginVMComponent loginVMComponent = new LoginVMComponent();
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_login,loginVMComponent);
         binding.setLoginVM(loginViewModel);
         initViews();
 

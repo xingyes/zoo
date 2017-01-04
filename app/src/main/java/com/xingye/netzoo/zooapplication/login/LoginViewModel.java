@@ -185,14 +185,14 @@ public class LoginViewModel extends BaseObservable {
     }
 
 
-    @BindingAdapter("helptip")
-    public static void justSettext(TextView view, String tips)
-    {
-        int length = tips.length();
-        Spannable wordtoSpan = new SpannableString(tips);
-        wordtoSpan.setSpan(new ForegroundColorSpan(0xffCE393A), length-3, length-1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        view.setText(wordtoSpan);
-    }
+//    @BindingAdapter("helptip")
+//    public static void justSettext(TextView view, String tips)
+//    {
+//        int length = tips.length();
+//        Spannable wordtoSpan = new SpannableString(tips);
+//        wordtoSpan.setSpan(new ForegroundColorSpan(0xffCE393A), length-3, length-1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        view.setText(wordtoSpan);
+//    }
 
 
 /*    popwindow  Databinding about */
