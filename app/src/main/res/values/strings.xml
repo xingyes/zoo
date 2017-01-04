@@ -81,9 +81,7 @@
 	<string name="please_input_username">请输入用户名</string>
 	<string name="please_input_verifycode">请输入验证码</string>
 	<string name="pswd_not_empty">密码不能为空</string>
-    <string name="get_help_1">无法获取验证码，请联系管理员获取</string>
-    <string name="get_help_2">帮助</string>
-    <string name="get_help_3">。</string>
+    <string name="get_help_1">无法获取验证码，请联系管理员获取帮助。</string>
 
     <string name="login_help_1">无法获取验证码？</string>
     <string name="login_help_2">请按以下顺序解决：</string>

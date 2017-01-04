@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/popup_window_bottom_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_000000"
+        android:alpha="0.75"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/popup_window_bottom_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="@string/login_help_1"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="22dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/login_help_2"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="12.5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="@string/login_help_3"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/c_D2D4D6"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/login_help_4"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/c_D2D4D6"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/login_help_5"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/support_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_support_email"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/c_D2D4D6"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/popup_window_bottom_close"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_close"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
