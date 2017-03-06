@@ -10,5 +10,5 @@ public class AddFuncUtils {
         System.loadLibrary("AddFuncUtils");
     }
 
-    public native int add(int a,int b);
+    public static native int add(int a,int b);
 }
