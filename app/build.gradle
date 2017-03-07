@@ -1,28 +1,45 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.model.application'
 
-android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.0"
-    defaultConfig {
-        applicationId "com.xingye.netzoo.zooapplication"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+model {
+    android {
+        compileSdkVersion 24
+        buildToolsVersion "25.0.0"
+        defaultConfig {
+            applicationId "com.xingye.netzoo.zooapplication"
+            minSdkVersion.apiLevel = 15
+            targetSdkVersion.apiLevel = 24
+            versionCode 1
+            versionName "1.0"
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        }
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    android.ndk {
+        moduleName = "AddFuncUtils"
+    }
+    android.buildTypes {
+            release {
+                minifyEnabled false
+//                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+
+    android.dataBinding {
+            enabled = true
+        }
+
+    android.productFlavors{
+        create("arm"){
+            ndk.abiFilters.add("armeabi")
+        }
+        create("arm7"){
+            ndk.abiFilters.add("armeabi-v7a")
         }
     }
 
-    dataBinding{
-        enabled = true
-    }
-}
 
+
+
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

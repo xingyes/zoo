@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.databinding.ActivityLoginBinding;
+import com.xingye.netzoo.zooapplication.utils.AddFuncUtils;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
@@ -33,6 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initViews();
 
 
+        int abc = AddFuncUtils.add(1,3);
+        abc++;
 
     }
 
