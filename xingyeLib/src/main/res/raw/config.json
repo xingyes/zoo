@@ -1,5 +1,6 @@
 {"errno":0,"data":{"URL_VERIFY":{"url":"https://rdm.m.jd.com/auth/data.json?action=verify","method":"POST"},
-      "URL_SENDSMS":{"url":"https://rdm.m.jd.com/auth/data.json?action=sendSMS","method":"POST"}
+      "URL_SENDSMS":{"url":"https://rdm.m.jd.com/auth/data.json?action=sendSMS","method":"POST"},
+      "URL_ZHIHU":{"url":"https://news-at.zhihu.com/api/4/news/latest","method":"GET"}
       },
 
   "message":"","version":"1"}

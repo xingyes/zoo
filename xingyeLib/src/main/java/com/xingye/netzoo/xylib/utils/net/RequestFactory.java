@@ -80,8 +80,8 @@ public final class RequestFactory {
 		if( TextUtils.isEmpty(strUrl) || TextUtils.isEmpty(strMethod) )
 			return null;
 
-        strUrl = "https://www.baidu.com";
-        strMethod = "GET";
+//        strUrl = "https://www.baidu.com";
+//        strMethod = "GET";
 		MyApplication.getVersionInfo(mSelf.mContext);
 
 
@@ -322,7 +322,7 @@ public final class RequestFactory {
 	private static final String TAG_METHOD    = "method";
 	private static final String TAG_MSG_ARRAY = "msg_arr";
 	private static final String TAG_ERR_NO    = "errno";
-	private static final String CACHE_FILE    = "jingdong.jdrdm_config.cache";
+	private static final String CACHE_FILE    = "china_medic_config.cache";
 	
 	// Default host configuration.
 	public static final String BASE_HOST = "https://rdm.m.jd.com/";	//用fiddler调试时用这个http，不用https

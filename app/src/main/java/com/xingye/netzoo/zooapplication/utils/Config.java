@@ -83,6 +83,7 @@ public class Config {
 	public static final String URL_SENDSMS			= "URL_SENDSMS";
 	public static final String URL_DELCOMMENT		= "URL_DELCOMMENT";
 
+	public static final String URL_ZHIHU   = "URL_ZHIHU";
 
 	//99max
 	public static final int    MAXNUM_PER_ORDER = 99;
