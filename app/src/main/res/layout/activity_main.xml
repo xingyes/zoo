@@ -4,7 +4,7 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="49dp"
         android:layout_alignParentBottom="true"
         android:id="@+id/main_tab"
         android:background="@color/c_7FCCCCCC"

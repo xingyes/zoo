@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 
 
@@ -22,6 +24,8 @@ public class MyApplication extends Application {
 		MyApplication.app = this;
 
 		MyApplication.start();
+
+		Fresco.initialize(this);
 
 		//CrashReport.initCrashReport(this);
 		//String userId = ILogin.getLoginUid() + ""; // 用户ID

@@ -11,6 +11,16 @@
 	<string name="month">月</string>
 	<string name="all">全部</string>
 
+    <string name="entrance_0">预约挂号</string>
+    <string name="entrance_1">当日预约</string>
+    <string name="entrance_2">查看报告</string>
+    <string name="entrance_3">医院简介</string>
+    <string name="entrance_4">候诊提醒</string>
+    <string name="entrance_5">预约服务</string>
+    <string name="entrance_6">中医体检</string>
+    <string name="entrance_7">未治病服务</string>
+    <string name="entrance_8">中医养生</string>
+
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>
     <string name="network_error_info">如果网络正常，建议稍后片刻再试</string>
