@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -39,7 +40,6 @@ import okhttp3.Response;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
 
-    private RadioGroup tabGroup;
     private FragmentManager fragmentManager;
     private MainFragment       mainFragment;
     private OutcallFragment    outcallFragment;
@@ -47,49 +47,105 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private MyCenterFragment   myCenterFragment;
     private int   lastCheckId = -1;
 
+    private ImageView   tabimv0;
+    private ImageView   tabimv1;
+    private ImageView   tabimv2;
+    private ImageView   tabimv3;
+    private TextView    tabtv0;
+    private TextView    tabtv1;
+    private TextView    tabtv2;
+    private TextView    tabtv3;
+    private View.OnClickListener  tabClickListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tabimv0 = (ImageView) findViewById(R.id.tab_imv_0);
+        tabimv1 = (ImageView) findViewById(R.id.tab_imv_1);
+        tabimv2 = (ImageView) findViewById(R.id.tab_imv_2);
+        tabimv3 = (ImageView) findViewById(R.id.tab_imv_3);
+        tabtv0 = (TextView) findViewById(R.id.tab_tv_0);
+        tabtv1 = (TextView) findViewById(R.id.tab_tv_1);
+        tabtv2 = (TextView) findViewById(R.id.tab_tv_2);
+        tabtv3 = (TextView) findViewById(R.id.tab_tv_3);
+
         fragmentManager = this.getSupportFragmentManager();
-        tabGroup = (RadioGroup)findViewById(R.id.main_tab);
-        tabGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        tabClickListener = new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(lastCheckId == checkedId)
+            public void onClick(View v) {
+                int checkedId = v.getId();
+                if (lastCheckId == checkedId)
                     return;
 
+                switch (lastCheckId) {
+                    case R.id.tab_0:
+                        tabimv0.setImageResource(R.mipmap.icon_home_n);
+                        tabtv0.setTextColor(MainActivity.this.getResources().getColor(R.color.c_929292));
+                        break;
+                    case R.id.tab_1:
+                        tabimv1.setImageResource(R.mipmap.icon_chuzhen_n);
+                        tabtv1.setTextColor(MainActivity.this.getResources().getColor(R.color.c_929292));
+                        break;
+                    case R.id.tab_2:
+                        tabimv2.setImageResource(R.mipmap.icon_zixun_n);
+                        tabtv2.setTextColor(MainActivity.this.getResources().getColor(R.color.c_929292));
+                        break;
+                    case R.id.tab_3:
+                        tabimv3.setImageResource(R.mipmap.icon_my_n);
+                        tabtv3.setTextColor(MainActivity.this.getResources().getColor(R.color.c_929292));
+                        break;
+                    default:
+                        break;
+                }
                 FragmentTransaction ft = fragmentManager.beginTransaction();
-                switch (checkedId)
-                {
-                    case R.id.tab_main:
-                        if(mainFragment == null)
+                switch (checkedId) {
+                    case R.id.tab_0:
+                        if (mainFragment == null)
                             mainFragment = new MainFragment();
-                        ft.replace(R.id.main_frame,mainFragment);
+                        ft.replace(R.id.main_frame, mainFragment);
+                        tabimv0.setImageResource(R.mipmap.icon_home_n);
+                        tabtv0.setTextColor(MainActivity.this.getResources().getColor(R.color.c_5E4D3F));
                         break;
-                    case R.id.tab_outcall:
-                        if(outcallFragment == null)
+                    case R.id.tab_1:
+                        if (outcallFragment == null)
                             outcallFragment = new OutcallFragment();
-                        ft.replace(R.id.main_frame,outcallFragment);
+                        ft.replace(R.id.main_frame, outcallFragment);
+                        tabimv1.setImageResource(R.mipmap.icon_chuzhen_s);
+                        tabtv1.setTextColor(MainActivity.this.getResources().getColor(R.color.c_5E4D3F));
                         break;
-                    case R.id.tab_online:
-                        if(onlineFragment == null)
+                    case R.id.tab_2:
+                        if (onlineFragment == null)
                             onlineFragment = new OnlineFragment();
-                        ft.replace(R.id.main_frame,onlineFragment);
+                        ft.replace(R.id.main_frame, onlineFragment);
+                        tabimv2.setImageResource(R.mipmap.icon_zixun_s);
+                        tabtv2.setTextColor(MainActivity.this.getResources().getColor(R.color.c_5E4D3F));
                         break;
-                    case R.id.tab_mycenter:
-                        if(myCenterFragment == null)
+                    case R.id.tab_3:
+                        if (myCenterFragment == null)
                             myCenterFragment = new MyCenterFragment();
-                        ft.replace(R.id.main_frame,myCenterFragment);
+                        ft.replace(R.id.main_frame, myCenterFragment);
+                        tabimv3.setImageResource(R.mipmap.icon_my_s);
+                        tabtv3.setTextColor(MainActivity.this.getResources().getColor(R.color.c_5E4D3F));
                         break;
                 }
                 ft.commitAllowingStateLoss();
                 lastCheckId = checkedId;
             }
-        });
+        };
+
+        findViewById(R.id.tab_0).setOnClickListener(tabClickListener);
+        findViewById(R.id.tab_1).setOnClickListener(tabClickListener);
+        findViewById(R.id.tab_2).setOnClickListener(tabClickListener);
+        findViewById(R.id.tab_3).setOnClickListener(tabClickListener);
     }
 
+
+    private void shiftTabOpt(final int lastCheckId,final int checkId)
+    {
+
+    }
 
     @Override
     protected void onResume()
