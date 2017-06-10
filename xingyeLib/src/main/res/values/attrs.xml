@@ -51,4 +51,12 @@
         <attr name="selectionDividerWidth" format="dimension"/>
     </declare-styleable>
     <attr name="abstractWheelViewStyle" format="reference" />
+
+
+    <item name="BaseQuickAdapter_viewholder_support" type="id"/>
+    <item name="BaseQuickAdapter_swiping_support" type="id"/>
+    <item name="BaseQuickAdapter_dragging_support" type="id"/>
+    <item name="BaseQuickAdapter_databinding_support" type="id"/>
+
+
 </resources>

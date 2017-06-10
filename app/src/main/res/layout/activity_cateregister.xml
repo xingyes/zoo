@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical">
+
+    <!--<com.xingye.netzoo.xylib.utils.ui.NaviBar-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:id="@+id/register_nav"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--tools:bgcolor="#5E4D3F"-->
+        <!--tools:titleText="@string/entrance_0"/>-->
+
+    <RelativeLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_cate"
+            android:text="心血管内科"
+            android:paddingLeft="8dp"
+            android:layout_width="220dp"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:textColor="#474747"/>
+        <TextView
+            android:id="@+id/register_date"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="2017-10-20"
+            android:textSize="14dp"
+            android:textColor="@color/c_5E4D3F"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/calendar_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
