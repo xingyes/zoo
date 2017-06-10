@@ -21,6 +21,12 @@
     <string name="entrance_7">未治病服务</string>
     <string name="entrance_8">中医养生</string>
 
+    <string name="doctor_name">专家姓名</string>
+
+    <string name="hospital_center">中心院区</string>
+    <string name="hospital_north">北院区</string>
+    <string name="hospital_south">南院区</string>
+
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>
     <string name="network_error_info">如果网络正常，建议稍后片刻再试</string>

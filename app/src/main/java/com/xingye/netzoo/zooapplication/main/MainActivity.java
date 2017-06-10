@@ -38,7 +38,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener{
+public class MainActivity extends FragmentActivity{
 
     private FragmentManager fragmentManager;
     private MainFragment       mainFragment;
@@ -56,6 +56,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private TextView    tabtv2;
     private TextView    tabtv3;
     private View.OnClickListener  tabClickListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +106,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                         if (mainFragment == null)
                             mainFragment = new MainFragment();
                         ft.replace(R.id.main_frame, mainFragment);
-                        tabimv0.setImageResource(R.mipmap.icon_home_n);
+                        tabimv0.setImageResource(R.mipmap.icon_home_s);
                         tabtv0.setTextColor(MainActivity.this.getResources().getColor(R.color.c_5E4D3F));
                         break;
                     case R.id.tab_1:
@@ -139,13 +140,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         findViewById(R.id.tab_1).setOnClickListener(tabClickListener);
         findViewById(R.id.tab_2).setOnClickListener(tabClickListener);
         findViewById(R.id.tab_3).setOnClickListener(tabClickListener);
+        tabClickListener.onClick(findViewById(R.id.tab_0));
     }
 
-
-    private void shiftTabOpt(final int lastCheckId,final int checkId)
-    {
-
-    }
 
     @Override
     protected void onResume()
@@ -153,9 +150,4 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         super.onResume();
     }
 
-
-    @Override
-    public void onClick(View v) {
-
-    }
 }

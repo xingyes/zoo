@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".bookregister.BookRegisterActivity"/>
         <activity android:name=".login.LoginActivity"/>
     </application>
 

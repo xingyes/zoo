@@ -4,17 +4,20 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.net.JsonCallback;
 import com.xingye.netzoo.xylib.utils.net.OkhttpUtil;
 import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.xylib.utils.ui.CarouseFigureVPAdatper;
 import com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
 import com.xingye.netzoo.zooapplication.utils.Config;
 
 import java.io.IOException;
@@ -66,6 +69,19 @@ public class MainFragment extends BaseFragment{
 
 
         gridView = (GridView)mRoot.findViewById(R.id.home_grid);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position)
+                {
+                    case 0:
+                        ToolUtil.startActivity(MainFragment.this.getActivity(), BookRegisterActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
         gridAdapter = new BaseAdapter() {
                 LayoutInflater inflater = LayoutInflater.from(MainFragment.this.getContext());
                 @Override

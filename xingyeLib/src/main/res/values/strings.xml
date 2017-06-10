@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">xylib</string>
+
+    <string name="btn_cancel">取消</string>
+    <string name="btn_ok">确定</string>
+
+    <string name="x_day">yyyy-MM-dd</string>
+    <string name="x_minite">yyyy-MM-dd HH:mm</string>
+
+
 </resources>

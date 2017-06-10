@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_FFFFFF">
+
+    <TextView
+        android:textColor="@color/c_5E4D3F"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_tv"
+        android:textSize="18dp"
+        android:text="内科"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/item_imv"
+        android:layout_marginLeft="13dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:src="@mipmap/right_arrow"/>
+</RelativeLayout>
