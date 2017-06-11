@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.ui.DateTimePickerView;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
+import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.main.MainFragment;
 import com.xingye.netzoo.zooapplication.main.MyCenterFragment;
@@ -76,6 +77,12 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
 
         firstListV = (ListView)findViewById(R.id.main_list);
         subListV = (ListView)findViewById(R.id.sub_list);
+        subListV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ToolUtil.startActivity(BookRegisterActivity.this,CateRegisterActivity.class);
+            }
+        });
 
         mainAdapter = new MainCategoryAdapter(this,mainCates);
         firstListV.setAdapter(mainAdapter);

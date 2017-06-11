@@ -2,7 +2,7 @@ package com.xingye.netzoo.xylib.utils.baseRecyclerAdatper.listener;
 
 import android.view.View;
 
-import com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter;
+import com.xingye.netzoo.xylib.utils.baseRecyclerAdatper.BaseQuickAdapter;
 
 
 /**

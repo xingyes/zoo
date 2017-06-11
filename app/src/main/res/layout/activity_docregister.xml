@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/register_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/entrance_0"/>
+
+    <include layout="@layout/item_doctor"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c_C8C7CC"/>
+
+    <include layout="@layout/key_value_item"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <include layout="@layout/key_btn_item"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/time_0"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#C8C7CC"/>
+
+        <include layout="@layout/key_btn_item"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/time_1"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#C8C7CC"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

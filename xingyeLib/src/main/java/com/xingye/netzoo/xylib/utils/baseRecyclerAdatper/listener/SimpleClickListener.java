@@ -8,15 +8,12 @@ import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter;
-import com.jingdong.common.baseRecycleAdapter.BaseViewHolder;
+
+import com.xingye.netzoo.xylib.utils.baseRecyclerAdatper.BaseQuickAdapter;
+import com.xingye.netzoo.xylib.utils.baseRecyclerAdatper.BaseViewHolder;
 
 import java.util.Set;
 
-import static com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter.EMPTY_VIEW;
-import static com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter.FOOTER_VIEW;
-import static com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter.HEADER_VIEW;
-import static com.jingdong.common.baseRecycleAdapter.BaseQuickAdapter.LOADING_VIEW;
 
 
 /**
@@ -291,11 +288,13 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
             }
         }
         int type = baseQuickAdapter.getItemViewType(position);
-        return (type == EMPTY_VIEW || type == HEADER_VIEW || type == FOOTER_VIEW || type == LOADING_VIEW);
+        return (type == BaseQuickAdapter.EMPTY_VIEW || type == BaseQuickAdapter.HEADER_VIEW ||
+                type == BaseQuickAdapter.FOOTER_VIEW || type == BaseQuickAdapter.LOADING_VIEW);
     }
     private boolean isHeaderOrFooterView(int type) {
 
-        return (type == EMPTY_VIEW || type == HEADER_VIEW || type == FOOTER_VIEW || type == LOADING_VIEW);
+        return (type == BaseQuickAdapter.EMPTY_VIEW || type == BaseQuickAdapter.HEADER_VIEW ||
+                type == BaseQuickAdapter.FOOTER_VIEW || type == BaseQuickAdapter.LOADING_VIEW);
     }
 }
 

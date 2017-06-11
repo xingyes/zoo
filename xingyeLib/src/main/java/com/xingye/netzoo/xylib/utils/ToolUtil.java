@@ -61,7 +61,11 @@ import java.util.TimeZone;
 
 public class ToolUtil {
 
+	/**
+	 * start with 1
+	 */
 	private static String[] WEEKDAYS = new String[] { "", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+	public static String[] WEEKDAYS_CH = new String[] {"","日", "一", "二", "三", "四", "五", "六"};
 
 	private static String[] MONTHS = new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 

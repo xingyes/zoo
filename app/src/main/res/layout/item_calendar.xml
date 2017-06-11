@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="53.4dp"
+    android:layout_height="wrap_content"
+    android:background="@color/c_FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:textColor="#474747"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weekday_tv"
+        android:textSize="16dp"
+        android:text="六"/>
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#474747"
+        android:layout_margin="7dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:id="@+id/monthday_tv"
+        android:textSize="16dp"
+        android:text="11"/>
+    <ImageView
+        android:id="@+id/sep_v"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/c_5E4D3F"/>
+</LinearLayout>

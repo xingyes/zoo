@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_key"
+        android:textSize="16dp"
+        android:textColor="#474747"
+        android:text="2017-10-20 下午 14:00" />
+    <TextView
+        android:background="@drawable/button_brown"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:id="@+id/info_btn"
+        android:textSize="16dp"
+        android:textColor="@drawable/hospital_text_color_state"
+        android:text="预约"
+        android:gravity="center"/>
+</RelativeLayout>
