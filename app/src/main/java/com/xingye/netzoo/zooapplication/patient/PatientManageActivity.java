@@ -74,10 +74,13 @@ public class PatientManageActivity extends Activity implements View.OnClickListe
             }
         });
         showRecyclerview.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        PatientModel  patientModel = new PatientModel();
-        patientModel.name = "小老婆";
-        patientModel.phone = "13091910202";
-        patientList.add(patientModel);
+        for(int i = 0;i<9;i++)
+        {
+            PatientModel  patientModel = new PatientModel();
+            patientModel.name = "小老婆" +i;
+            patientModel.phone = "130" + i + "119892" +i;
+            patientList.add(patientModel);
+        }
         patientAdapter = new PatientAdapter(this,patientList);
         showRecyclerview.setAdapter(patientAdapter);
 
