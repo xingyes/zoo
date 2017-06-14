@@ -1,6 +1,7 @@
 package com.xingye.netzoo.zooapplication.bookregister;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
+import com.xingye.netzoo.xylib.utils.ui.RecycleViewDivider;
 import com.xingye.netzoo.zooapplication.R;
 
 import java.util.ArrayList;
@@ -73,8 +75,9 @@ public class CateRegisterActivity extends Activity implements View.OnClickListen
             }
         });
         doctorView.setAdapter(doctorAdapter);
-        doctorView.addItemDecoration(new DividerItemDecoration(
-                CateRegisterActivity.this, DividerItemDecoration.VERTICAL));
+        doctorView.addItemDecoration(new RecycleViewDivider(
+                CateRegisterActivity.this, DividerItemDecoration.VERTICAL,3
+                , Color.GRAY));
 
         docList = new ArrayList<DoctorModel>();
         DoctorModel doc = new DoctorModel();

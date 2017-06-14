@@ -52,12 +52,12 @@ public class MainFragment extends BaseFragment{
                 new CarouseFigureVPAdatper.CarouseFigureImageAdapterListener() {
             @Override
             public int getCount() {
-                return 1;
+                return 2;
             }
 
             @Override
             public String getImageUrl(int position) {
-                return "res://" + MainFragment.this.getContext().getPackageName() +" /" + R.mipmap.banner_photo;
+                return "res://" + MainFragment.this.getActivity().getPackageName() +" /" + R.mipmap.banner_photo;
             }
 
             @Override
@@ -83,7 +83,7 @@ public class MainFragment extends BaseFragment{
             }
         });
         gridAdapter = new BaseAdapter() {
-                LayoutInflater inflater = LayoutInflater.from(MainFragment.this.getContext());
+                LayoutInflater inflater = LayoutInflater.from(MainFragment.this.getActivity());
                 @Override
                 public int getCount() {
                     return enTvArray.length;
@@ -146,14 +146,14 @@ public class MainFragment extends BaseFragment{
 
                         @Override
                         public void onFailure(Call call, Exception e) {
-                            Object px = Proxy.newProxyInstance(JsonCallback.class.getClassLoader(),
-                                    new Class<?>[]{JsonCallback.class},
-                                    new InvocationHandler() {
-                                        @Override
-                                        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                                            return null;
-                                        }
-                                    });
+//                            Object px = Proxy.newProxyInstance(JsonCallback.class.getClassLoader(),
+//                                    new Class<?>[]{JsonCallback.class},
+//                                    new InvocationHandler() {
+//                                        @Override
+//                                        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+//                                            return null;
+//                                        }
+//                                    });
                         }
 
                         @Override

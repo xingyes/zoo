@@ -22,6 +22,21 @@
         android:id="@+id/info_btn"
         android:textSize="16dp"
         android:textColor="@drawable/hospital_text_color_state"
-        android:text="预约"
+        android:text="预约1"
         android:gravity="center"/>
+
+    <!--<CheckBox-->
+        <!--android:visibility="gone"-->
+        <!--android:button="@null"-->
+        <!--android:background="@drawable/button_brown"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:id="@+id/info_check"-->
+        <!--android:textSize="16dp"-->
+        <!--android:textColor="@drawable/hospital_text_color_state"-->
+        <!--android:text="预约2"-->
+        <!--android:gravity="center"/>-->
 </RelativeLayout>

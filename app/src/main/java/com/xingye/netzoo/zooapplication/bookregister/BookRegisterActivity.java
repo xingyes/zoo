@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -30,6 +31,7 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
     private ListView   firstListV;
     private ListView   subListV;
 
+    private EditText   searchEdit;
     private MainCategoryAdapter mainAdapter;
     private SubCategoryAdapter  subAdapter;
     private RadioGroup hostpitalGroup;
@@ -51,6 +53,8 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
                                                 finish();
                                            }
                                        });
+
+        searchEdit = (EditText)findViewById(R.id.search_keyword);
 
         hostpitalGroup = (RadioGroup) findViewById(R.id.hospital_group);
         hostpitalGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -80,6 +84,7 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
         subListV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
                 ToolUtil.startActivity(BookRegisterActivity.this,CateRegisterActivity.class);
             }
         });
@@ -89,6 +94,7 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
         firstListV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
                 if(mainAdapter.getChoice() == position)
                     return;
 
@@ -115,6 +121,7 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
         registerDayV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
                 datePicker.setVisibility(View.VISIBLE);
             }
         });

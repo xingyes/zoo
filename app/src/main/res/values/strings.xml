@@ -27,6 +27,26 @@
     <string name="hospital_north">北院区</string>
     <string name="hospital_south">南院区</string>
 
+    <string name="register_ok">确认预约</string>
+
+    <string name="register_succ">预约成功</string>
+    <string name="register_keshi">预约科室</string>
+    <string name="keshi_pos">科室位置</string>
+    <string name="register_doc">预约专家</string>
+    <string name="see_doctor_date">就诊日期</string>
+    <string name="register_fee">预约费</string>
+
+    <string name="patient_manage">就诊人管理</string>
+    <string name="sure_submit">确认提交</string>
+
+    <string name="person_name">姓名</string>
+    <string name="person_ID">身份证</string>
+    <string name="medic_ID">就诊卡号</string>
+    <string name="phone_num">手机号</string>
+
+    <string name="change">更改</string>
+
+
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>
     <string name="network_error_info">如果网络正常，建议稍后片刻再试</string>

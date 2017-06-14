@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/register_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/entrance_0"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <TextView
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_register"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#474747"
+            android:text="预约信息" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c_C8C7CC"/>
+
+    <include layout="@layout/key_value_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/register_keshi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C8C7CC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <include layout="@layout/key_value_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/keshi_pos"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C8C7CC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <include layout="@layout/key_value_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/doc_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C8C7CC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <include layout="@layout/key_value_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/register_date"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C8C7CC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <include layout="@layout/key_value_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/register_fee"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C8C7CC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_head"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#474747"
+            android:text="就诊人" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c_C8C7CC"/>
+    <include layout="@layout/key_btn_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/patient_info"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:background="@drawable/button_brown"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="335dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:id="@+id/register_btn"
+        android:text="@string/register_ok"
+        android:textColor="@drawable/hospital_text_color_state"/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

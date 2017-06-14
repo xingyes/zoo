@@ -22,7 +22,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bookregister.DocRegisterActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,8 +32,12 @@
 
         <activity android:name=".bookregister.BookRegisterActivity"/>
         <activity android:name=".bookregister.CateRegisterActivity"/>
-        <!--<activity android:name=".bookregister.DocRegisterActivity"/>-->
-        <activity android:name=".main.MainActivity"/>
+        <activity android:name=".bookregister.DocRegisterActivity"/>
+        <activity android:name=".bookregister.RegisterDetailActivity"/>
+        <activity android:name=".patient.PatientManageActivity"/>
+        <activity android:name=".patient.PatientEditActivity"/>
+
+        <!--<activity android:name=".main.MainActivity"/>-->
         <activity android:name=".login.LoginActivity"/>
 
     </application>

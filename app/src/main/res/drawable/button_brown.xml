@@ -3,7 +3,9 @@
 
     <item android:drawable="@drawable/button_brown_solid" android:state_enabled="true" android:state_pressed="true"/>
     <item android:drawable="@drawable/button_brown_solid" android:state_enabled="true" android:state_focused="true"/>
+    <item android:drawable="@drawable/button_brown_solid" android:state_enabled="true" android:state_checked="true"/>
     <item android:drawable="@drawable/button_gray_solid" android:state_enabled="false"/>
+
     <item android:drawable="@drawable/button_brown_frame"/>
 
 </selector>

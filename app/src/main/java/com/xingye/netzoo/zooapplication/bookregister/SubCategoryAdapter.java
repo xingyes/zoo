@@ -29,8 +29,7 @@ public class SubCategoryAdapter extends BaseAdapter{
 
     public void setInfo(String[]list)
     {
-        if(list==null)
-            info.clear();
+        info.clear();
         for(String item : list)
             info.add(item);
     }

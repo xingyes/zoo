@@ -7,11 +7,14 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
+import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 
 import java.util.ArrayList;
@@ -25,6 +28,15 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
     private TextView    docinfov;
     private SimpleDraweeView docheadv;
     private DoctorModel doctor;
+
+    private TimeGroup   timeG0 = new TimeGroup();
+    private TimeGroup   timeG1 = new TimeGroup();
+    public class   TimeGroup
+    {
+        TextView   keyv;
+        TextView   btnv;
+//        CheckBox   checkBox;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +55,28 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
         docinfov = (TextView)findViewById(R.id.doc_info);
         docheadv = (SimpleDraweeView)findViewById(R.id.doc_imv);
 
+        View time = findViewById(R.id.time_0);
+        timeG0.keyv= (TextView)time.findViewById(R.id.info_key);
+        timeG0.btnv= (TextView) time.findViewById(R.id.info_btn);
 
+        time = findViewById(R.id.time_1);
+        timeG1.keyv= (TextView)time.findViewById(R.id.info_key);
+        timeG1.btnv= (TextView) time.findViewById(R.id.info_btn);
+        timeG0.btnv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UiUtils.makeToast(DocRegisterActivity.this,timeG0.keyv.getText().toString());
+                ToolUtil.startActivity(DocRegisterActivity.this,RegisterDetailActivity.class);
+            }
+        });
+
+        timeG1.btnv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UiUtils.makeToast(DocRegisterActivity.this,timeG1.keyv.getText().toString());
+                ToolUtil.startActivity(DocRegisterActivity.this,RegisterDetailActivity.class);
+            }
+        });
 
 
         doctor = new DoctorModel();
@@ -54,9 +87,6 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
         doctitlev.setText(doctor.title);
         docheadv.setImageURI(Uri.parse(doctor.head));
         docinfov.setText("挂号费 20元");
-
-
-
 
         }
 
