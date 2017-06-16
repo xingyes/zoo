@@ -22,7 +22,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
         <activity android:name=".hospital.HospitalInfoActivity"/>
         <activity android:name=".hospital.HospitalGuideActivity"/>
         <activity android:name=".hospital.TitleImgActivity"/>
-        <!--<activity android:name=".main.MainActivity"/>-->
+        <activity android:name=".main.MainActivity"/>
         <activity android:name=".login.LoginActivity"/>
 
     </application>
