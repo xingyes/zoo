@@ -355,6 +355,18 @@ public class NaviBar extends RelativeLayout {
     }
 
     /**
+     * 设置主标题字符串
+     *
+     * @param resid 资源id
+     */
+    public void setTitle(int resid) {
+        if (titleTv != null) {
+            titleTv.setVisibility(VISIBLE);
+            titleTv.setText(resid);
+        }
+    }
+
+    /**
      * 设置主标题背景
      *
      * @param resid

@@ -16,8 +16,10 @@ import com.xingye.netzoo.xylib.utils.net.OkhttpUtil;
 import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.xylib.utils.ui.CarouseFigureVPAdatper;
 import com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager;
+import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
+import com.xingye.netzoo.zooapplication.hospital.HospitalInfoActivity;
 import com.xingye.netzoo.zooapplication.utils.Config;
 
 import java.io.IOException;
@@ -30,12 +32,10 @@ import okhttp3.Request;
 
 
 public class MainFragment extends BaseFragment{
-
-
     private CarouselFigureViewPager  bannerView;
+    private PagerAdapter             bannerAdapter;
     private GridView                 gridView;
     private BaseAdapter              gridAdapter;
-    private PagerAdapter             bannerAdapter;
     private int[]      enTvArray = {R.string.entrance_0,R.string.entrance_1,R.string.entrance_2,
             R.string.entrance_3,R.string.entrance_4,R.string.entrance_5,
             R.string.entrance_6,R.string.entrance_7,R.string.entrance_8};
@@ -57,12 +57,12 @@ public class MainFragment extends BaseFragment{
 
             @Override
             public String getImageUrl(int position) {
-                return "res://" + MainFragment.this.getActivity().getPackageName() +" /" + R.mipmap.banner_photo;
+                return "res://" + MainFragment.this.getActivity().getPackageName() +"/" + R.mipmap.banner_photo;
             }
 
             @Override
             public void onClick(int position) {
-
+                UiUtils.startActivity(MainFragment.this.getActivity(), HospitalInfoActivity.class,false);
             }
         });
         bannerView.setAdapter(bannerAdapter);

@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/hospital_info_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="医院介绍"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hospital_banner"
+            tools:hdpi_len="133dp"
+            tools:isCarousel="true"/>
+
+        <TextView
+            android:layout_margin="5dp"
+            android:id="@+id/hospital_brief"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/c_5E4D3F"
+            android:textSize="14dp"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/hospital_info_detail"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/specialist_go"/>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/guide_go"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

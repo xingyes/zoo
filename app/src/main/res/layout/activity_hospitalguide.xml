@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/hospital_guide_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/medic_guide"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/outpatient_guide"/>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/inside_map"/>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/to_hospital"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

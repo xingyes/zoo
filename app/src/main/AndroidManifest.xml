@@ -37,6 +37,9 @@
         <activity android:name=".patient.PatientManageActivity"/>
         <activity android:name=".patient.PatientEditActivity"/>
 
+        <activity android:name=".hospital.HospitalInfoActivity"/>
+        <activity android:name=".hospital.HospitalGuideActivity"/>
+        <activity android:name=".hospital.TitleImgActivity"/>
         <!--<activity android:name=".main.MainActivity"/>-->
         <activity android:name=".login.LoginActivity"/>
 
