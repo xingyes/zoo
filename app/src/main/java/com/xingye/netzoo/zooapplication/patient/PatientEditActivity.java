@@ -71,6 +71,11 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         IDGp.keyv.setText(R.string.person_ID);
         medicIdGp.keyv.setText(R.string.medic_ID);
 
+        nameGp.editv.setHint(R.string.hint_person_name);
+        phoneGp.editv.setHint(R.string.hint_phone_num);
+        IDGp.editv.setHint(R.string.hint_person_ID);
+        medicIdGp.editv.setHint(R.string.hint_medic_ID);
+
         patientModel = intent.getParcelableExtra(PATIENT_RESULT);
         if(patientModel!=null)
         {

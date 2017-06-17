@@ -35,7 +35,7 @@
             android:textColor="#474747"
             android:text="预约信息" />
     </RelativeLayout>
-    <ImageView
+    <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
@@ -49,7 +49,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C8C7CC"
+        android:background="@color/c_C8C7CC"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
     <include layout="@layout/key_value_item"
@@ -61,7 +61,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C8C7CC"
+        android:background="@color/c_C8C7CC"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
     <include layout="@layout/key_value_item"
@@ -73,7 +73,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C8C7CC"
+        android:background="@color/c_C8C7CC"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
     <include layout="@layout/key_value_item"
@@ -85,7 +85,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C8C7CC"
+        android:background="@color/c_C8C7CC"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
     <include layout="@layout/key_value_item"
@@ -97,7 +97,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C8C7CC"
+        android:background="@color/c_C8C7CC"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
 
@@ -118,7 +118,7 @@
             android:textColor="#474747"
             android:text="就诊人" />
     </RelativeLayout>
-    <ImageView
+    <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>

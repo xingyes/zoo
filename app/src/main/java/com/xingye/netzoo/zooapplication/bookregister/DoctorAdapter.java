@@ -57,8 +57,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((ViewHolder)holder).namev.setText(doclist.get(position).name);
         ((ViewHolder)holder).titlev.setText(doclist.get(position).title);
-        Uri uri = Uri.parse(doclist.get(position).head);
-        ((ViewHolder)holder).headv.setImageURI(uri);
+        ((ViewHolder)holder).headv.setImageURI(doclist.get(position).head);
 
         holder.itemView.setTag(position);
     }

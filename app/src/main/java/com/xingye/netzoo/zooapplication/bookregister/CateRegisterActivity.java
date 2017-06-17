@@ -82,7 +82,7 @@ public class CateRegisterActivity extends Activity implements View.OnClickListen
         docList = new ArrayList<DoctorModel>();
         DoctorModel doc = new DoctorModel();
         doc.title = "副主任";
-        doc.head = "http://tupian.qqjay.com/u/2011/0813/a0e401332cd034562e85d92339087cb2.jpg";
+        doc.head = "http://v1.qzone.cc/skin/201508/05/17/32/55c1d81b92542141.jpg!200x200.jpg";
         for(int i = 0; i < 5;i++)
         {
             doc.name = "医生"+i;

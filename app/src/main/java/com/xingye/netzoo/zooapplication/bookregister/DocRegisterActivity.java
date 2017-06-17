@@ -81,7 +81,7 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
 
         doctor = new DoctorModel();
         doctor.title = "副主任";
-        doctor.head = "http://tupian.qqjay.com/u/2011/0813/a0e401332cd034562e85d92339087cb2.jpg";
+        doctor.head = "http://v1.qzone.cc/skin/201508/05/17/32/55c1d81b92542141.jpg!200x200.jpg";
         doctor.name = "医生A";
         docnamev.setText(doctor.name);
         doctitlev.setText(doctor.title);

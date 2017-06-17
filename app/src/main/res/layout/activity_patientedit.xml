@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@id/add_patient_layout">
-    <ImageView
+    <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
@@ -47,7 +47,7 @@
         android:id="@+id/name_info"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <ImageView
+    <View
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:id="@+id/phone_info"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
-    <ImageView
+    <View
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
         android:id="@+id/personid_info"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <ImageView
+    <View
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
@@ -83,6 +83,13 @@
         android:id="@+id/medicid_info"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+
     </LinearLayout>
 
     <TextView
@@ -97,7 +104,5 @@
         android:id="@+id/submit_btn"
         android:text="@string/sure_submit"
         android:textColor="@drawable/hospital_text_color_state"/>
-
-
 
 </RelativeLayout>

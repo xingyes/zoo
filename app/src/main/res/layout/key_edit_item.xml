@@ -1,8 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="50dp"
+    android:background="@color/c_00000000"
+    android:orientation="horizontal">
     <TextView
+        android:minEms="4"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
@@ -10,22 +13,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/info_key"
         android:textSize="16dp"
-        android:textColor="#474747"
-        android:text="手机号"/>
+        android:textColor="@color/c_5E4D3F"/>
     <EditText
+        android:background="@null"
+        android:layout_marginLeft="10dp"
         android:inputType="text"
         android:maxLines="1"
-        android:padding="4dp"
         android:id="@+id/info_edit"
-        android:layout_margin="5dp"
-        android:layout_alignParentRight="true"
         android:imeOptions="actionNext"
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E9E9E9"
-        android:textColorHint="#7A797B"
-        android:textSize="14dp"
-        android:gravity="right|center_vertical"
-        android:text="10319291111"/>
-
-</RelativeLayout>
+        android:textColorHint="@color/hint_color"
+        android:textSize="16dp"
+        android:gravity="center_vertical|left"/>
+</LinearLayout>

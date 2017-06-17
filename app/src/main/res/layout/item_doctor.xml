@@ -9,8 +9,7 @@
         android:id="@+id/doc_imv"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp"
-        android:src="@mipmap/icon_calendar"/>
+        android:layout_marginLeft="20dp"/>
     <LinearLayout
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"
@@ -21,6 +20,8 @@
         android:layout_centerVertical="true">
 
         <TextView
+            android:textStyle="bold"
+            android:textColor="@color/c_474747"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/doc_name"
@@ -28,6 +29,7 @@
             android:text="医生A"
             android:layout_marginBottom="10dp"/>
         <TextView
+            android:textColor="@color/c_474747"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/doc_title"

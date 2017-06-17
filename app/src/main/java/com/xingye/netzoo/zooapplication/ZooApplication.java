@@ -8,4 +8,8 @@ import com.xingye.netzoo.xylib.utils.MyApplication;
 
 public class ZooApplication extends MyApplication {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 }
