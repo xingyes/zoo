@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:top="25dp">
-    <shape android:shape="rectangle">
-        <gradient
-            android:centerX="0.5"
-            android:centerY="0.35"
-            android:endColor="@color/c_929292"
-            android:gradientRadius="1000"
-            android:startColor="@color/c_5E4D3F"
-            android:type="radial" />
-    </shape>
-</item>
+<!--<item android:top="25dp">-->
+    <!--<shape android:shape="rectangle">-->
+        <!--<gradient-->
+            <!--android:centerX="0.5"-->
+            <!--android:centerY="0.35"-->
+            <!--android:endColor="@color/c_929292"-->
+            <!--android:gradientRadius="1000"-->
+            <!--android:startColor="@color/c_5E4D3F"-->
+            <!--android:type="radial" />-->
+    <!--</shape>-->
+<!--</item>-->
+    <item android:drawable="@mipmap/splash" />
 </layer-list>
