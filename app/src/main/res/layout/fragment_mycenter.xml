@@ -9,4 +9,17 @@
         android:text="我的中心"
         android:textSize="50dp"/>
 
+    <TextView
+        android:textSize="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_brown"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="335dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:id="@+id/go_login"
+        android:text="@string/login"
+        android:textColor="@drawable/hospital_text_color_state"/>
 </RelativeLayout>

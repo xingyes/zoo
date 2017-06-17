@@ -131,7 +131,10 @@
 	<string name="permission_disagree">拒绝</string>
 	
 	<!-- login  -->
-	<string name="login">登  录</string>
+    <string name="register">注册</string>
+    <string name="user_register">用户注册</string>
+    <string name="forget_passwd">忘记密码</string>
+	<string name="login">登录</string>
 	<string name="login_fail_title">登录失败！</string>
 	<string name="login_auth_denied">由于权限不足，您此次登录失败</string>
 	<string name="login_fail_net">由于网络原因，您此次登录失败</string>
@@ -153,8 +156,10 @@
     <string name="login_support_email">zhouzixiong@jd.com</string>
     <string name="login_email_subject">RDM(安卓)登录有问题</string>
 
-	<string name="username">ERP账号</string>
-    <string name="password">ERP密码</string>
+    <string name="username">账号</string>
+    <string name="hint_username">手机号／身份证号</string>
+    <string name="password">密码</string>
+    <string name="hint_password">请输入密码</string>
     <string name="verify_code_get">获取验证码</string>
     <string name="verify_code_resend_x">%s秒后重新获取</string>
 
