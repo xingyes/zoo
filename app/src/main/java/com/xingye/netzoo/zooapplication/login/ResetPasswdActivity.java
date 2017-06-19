@@ -20,7 +20,7 @@ import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 
 
-public class UserRegisterActivity extends Activity implements View.OnClickListener{
+public class ResetPasswdActivity extends Activity implements View.OnClickListener{
 
 
     public class EditGroup
@@ -37,8 +37,6 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
     private EditGroup passwdGp;
     private EditGroup repasswdGp;
 
-    private EditGroup nameGp;
-    private EditGroup personIDGp;
     public static final int MSG_COUNTDOWN = 102;
     public int  countdown = -1;
     private Handler handler = new Handler(Looper.myLooper())
@@ -71,8 +69,8 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_register);
-        NaviBar naviBar = (NaviBar)findViewById(R.id.user_register_nav);
+        setContentView(R.layout.activity_resetpasswd);
+        NaviBar naviBar = (NaviBar)findViewById(R.id.reset_passwd_nav);
         naviBar.setLeftOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,8 +82,6 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
         verifyGp = new EditGroup();
         passwdGp = new EditGroup();
         repasswdGp = new EditGroup();
-        nameGp = new EditGroup();
-        personIDGp = new EditGroup();
 
         View view = findViewById(R.id.user_phone);
         phoneGp.keyv = (TextView)view.findViewById(R.id.info_key);
@@ -218,78 +214,7 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
         });
 
 
-        view = findViewById(R.id.name);
-        nameGp.keyv = (TextView)view.findViewById(R.id.info_key);
-        nameGp.editv = (EditText)view.findViewById(R.id.info_edit);
-        nameGp.keyv.setText(R.string.person_name);
-        nameGp.editv.setHint(R.string.hint_person_name);
-        nameGp.delv = (ImageView)view.findViewById(R.id.info_del);
-        nameGp.delv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nameGp.editv.setText("");
-            }
-        });
-        nameGp.editv.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.length()>0)
-                {
-                    nameGp.delv.setVisibility(View.VISIBLE);
-                }else
-                    nameGp.delv.setVisibility(View.INVISIBLE);
-            }
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-        nameGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if(b && nameGp.editv.length()>0)
-                    nameGp.delv.setVisibility(View.VISIBLE);
-                else
-                    nameGp.delv.setVisibility(View.INVISIBLE);
-            }
-        });
 
-
-        view = findViewById(R.id.personid);
-        personIDGp.keyv = (TextView)view.findViewById(R.id.info_key);
-        personIDGp.editv = (EditText)view.findViewById(R.id.info_edit);
-        personIDGp.keyv.setText(R.string.person_ID);
-        personIDGp.editv.setHint(R.string.hint_person_ID);
-        personIDGp.delv = (ImageView)view.findViewById(R.id.info_del);
-        personIDGp.delv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                personIDGp.editv.setText("");
-            }
-        });
-        personIDGp.editv.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.length()>0)
-                {
-                    personIDGp.delv.setVisibility(View.VISIBLE);
-                }else
-                    personIDGp.delv.setVisibility(View.INVISIBLE);
-            }
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-        personIDGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if(b && personIDGp.editv.length()>0)
-                    personIDGp.delv.setVisibility(View.VISIBLE);
-                else
-                    personIDGp.delv.setVisibility(View.INVISIBLE);
-            }
-        });
 
         findViewById(R.id.submit_btn).setOnClickListener(this);
         findViewById(R.id.passwd_visiable).setOnClickListener(this);
@@ -320,7 +245,7 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
                 repasswdGp.editv.setSelection(repasswdGp.editv.length());
                 break;
             case R.id.submit_btn:
-                goRegister();
+                changePasswd();
                 break;
             default:
                 break;
@@ -329,7 +254,7 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
 
 
 
-    private void goRegister()
+    private void changePasswd()
     {
         String phone = phoneGp.editv.getText().toString();
         if(TextUtils.isEmpty(phone)) {
@@ -353,12 +278,11 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
         }
 
 
-
         /**
          *  send net request
          */
 
-        UiUtils.startActivity(UserRegisterActivity.this, LoginActivity.class,true);
+        UiUtils.startActivity(ResetPasswdActivity.this, LoginActivity.class,true);
         finish();
     }
 

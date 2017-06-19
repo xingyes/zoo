@@ -146,6 +146,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 UiUtils.startActivity(LoginActivity.this,UserRegisterActivity.class,true);
                 break;
             case R.id.forget_passwd:
+                UiUtils.startActivity(LoginActivity.this,ResetPasswdActivity.class,true);
                 break;
             case R.id.submit_btn:
                 goLogin();
