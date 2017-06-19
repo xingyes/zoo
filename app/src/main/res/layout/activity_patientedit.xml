@@ -43,49 +43,33 @@
 
     <include layout="@layout/key_edit_item"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/name_info"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="44dp"
+        android:id="@+id/name_info"/>
     <View
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
     <include layout="@layout/key_edit_item"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/phone_info"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_height="44dp"
+            android:id="@+id/phone_info"/>
     <View
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/c_C8C7CC"/>
     <include layout="@layout/key_edit_item"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/personid_info"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="44dp"
+        android:id="@+id/personid_info"/>
     <View
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
     <include layout="@layout/key_edit_item"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/medicid_info"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="44dp"
+        android:id="@+id/medicid_info"/>
         <View
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/c_C8C7CC"/>

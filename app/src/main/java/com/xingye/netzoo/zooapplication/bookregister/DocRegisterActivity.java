@@ -3,12 +3,7 @@ package com.xingye.netzoo.zooapplication.bookregister;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -16,9 +11,6 @@ import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-
-import java.util.ArrayList;
-import java.util.Calendar;
 
 
 public class DocRegisterActivity extends Activity implements View.OnClickListener{
@@ -57,11 +49,11 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
 
         View time = findViewById(R.id.time_0);
         timeG0.keyv= (TextView)time.findViewById(R.id.info_key);
-        timeG0.btnv= (TextView) time.findViewById(R.id.info_btn);
+        timeG0.btnv= (TextView) time.findViewById(R.id.info_del);
 
         time = findViewById(R.id.time_1);
         timeG1.keyv= (TextView)time.findViewById(R.id.info_key);
-        timeG1.btnv= (TextView) time.findViewById(R.id.info_btn);
+        timeG1.btnv= (TextView) time.findViewById(R.id.info_del);
         timeG0.btnv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

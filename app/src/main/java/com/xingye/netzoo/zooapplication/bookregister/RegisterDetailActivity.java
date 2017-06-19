@@ -100,7 +100,7 @@ public class RegisterDetailActivity extends Activity implements View.OnClickList
         gpview = findViewById(R.id.patient_info);
         patientGp.keyv = (TextView) gpview.findViewById(R.id.info_key);
         patientGp.keyv.setText(patient.getBrief());
-        patientGp.valuev = (TextView) gpview.findViewById(R.id.info_btn);
+        patientGp.valuev = (TextView) gpview.findViewById(R.id.info_del);
         patientGp.valuev.setText(R.string.change);
         patientGp.valuev.setOnClickListener(new View.OnClickListener() {
             @Override

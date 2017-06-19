@@ -3,9 +3,12 @@ package com.xingye.netzoo.zooapplication.patient;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
@@ -20,6 +23,7 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
     {
         public TextView keyv;
         public EditText editv;
+        public ImageView delv;
     }
 
     private EditGroup  nameGp;
@@ -56,15 +60,46 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         View view = findViewById(R.id.name_info);
         nameGp.keyv = (TextView)view.findViewById(R.id.info_key);
         nameGp.editv = (EditText) view.findViewById(R.id.info_edit);
+        nameGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        nameGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameGp.editv.setText("");
+            }
+        });
+
         view = findViewById(R.id.phone_info);
         phoneGp.keyv = (TextView)view.findViewById(R.id.info_key);
         phoneGp.editv = (EditText) view.findViewById(R.id.info_edit);
+        phoneGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        phoneGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                phoneGp.editv.setText("");
+            }
+        });
+
         view = findViewById(R.id.personid_info);
         IDGp.keyv = (TextView)view.findViewById(R.id.info_key);
         IDGp.editv = (EditText) view.findViewById(R.id.info_edit);
+        IDGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        IDGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IDGp.editv.setText("");
+            }
+        });
+
         view = findViewById(R.id.medicid_info);
         medicIdGp.keyv = (TextView)view.findViewById(R.id.info_key);
         medicIdGp.editv = (EditText) view.findViewById(R.id.info_edit);
+        medicIdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        medicIdGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                medicIdGp.editv.setText("");
+            }
+        });
 
         nameGp.keyv.setText(R.string.person_name);
         phoneGp.keyv.setText(R.string.phone_num);
@@ -79,12 +114,110 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         patientModel = intent.getParcelableExtra(PATIENT_RESULT);
         if(patientModel!=null)
         {
-            nameGp.editv.setText(patientModel.name);
             phoneGp.editv.setText(patientModel.phone);
             IDGp.editv.setText(patientModel.personid);
             medicIdGp.editv.setText(patientModel.medicid);
+            nameGp.editv.setText(patientModel.name);
+            nameGp.editv.setSelection(patientModel.name.length());
         }
+        // 后设置  TextWatcher
 
+
+        nameGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    nameGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    nameGp.delv.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        nameGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && nameGp.editv.length()>0)
+                    nameGp.delv.setVisibility(View.VISIBLE);
+                else
+                    nameGp.delv.setVisibility(View.INVISIBLE);
+            }
+        });
+        phoneGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    phoneGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    phoneGp.delv.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        phoneGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && phoneGp.editv.length()>0)
+                    phoneGp.delv.setVisibility(View.VISIBLE);
+                else
+                    phoneGp.delv.setVisibility(View.INVISIBLE);
+            }
+        });
+        IDGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    IDGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    IDGp.delv.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        IDGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && IDGp.editv.length()>0)
+                    IDGp.delv.setVisibility(View.VISIBLE);
+                else
+                    IDGp.delv.setVisibility(View.INVISIBLE);
+            }
+        });
+        medicIdGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    medicIdGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    medicIdGp.delv.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        medicIdGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && medicIdGp.editv.length()>0)
+                    medicIdGp.delv.setVisibility(View.VISIBLE);
+                else
+                    medicIdGp.delv.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        nameGp.editv.requestFocus();
+        UiUtils.showSoftInput(PatientEditActivity.this,nameGp.editv);
         findViewById(R.id.submit_btn).setOnClickListener(this);
 
     }

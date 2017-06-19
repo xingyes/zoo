@@ -1,39 +1,21 @@
 package com.xingye.netzoo.zooapplication.login;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.xingye.netzoo.xylib.utils.net.JsonCallback;
-import com.xingye.netzoo.xylib.utils.net.OkhttpUtil;
-import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.main.MainActivity;
-import com.xingye.netzoo.zooapplication.patient.PatientModel;
-import com.xingye.netzoo.zooapplication.utils.Config;
-
-import java.io.IOException;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 
 public class LoginActivity extends Activity implements View.OnClickListener{
@@ -43,6 +25,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     {
         public TextView keyv;
         public EditText editv;
+        public ImageView delv;
     }
 
     private EditGroup nameGp;
@@ -65,18 +48,87 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         View view = findViewById(R.id.login_name);
         nameGp.keyv = (TextView)view.findViewById(R.id.info_key);
         nameGp.editv = (EditText)view.findViewById(R.id.info_edit);
+        nameGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        nameGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameGp.editv.setText("");
+            }
+        });
         nameGp.keyv.setText(R.string.username);
         nameGp.editv.setHint(R.string.hint_username);
+        nameGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    nameGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    nameGp.delv.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        nameGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && nameGp.editv.length()>0)
+                    nameGp.delv.setVisibility(View.VISIBLE);
+                else
+                    nameGp.delv.setVisibility(View.INVISIBLE);
+            }
+        });
 
         view = findViewById(R.id.login_password);
         passwdGp.keyv = (TextView)view.findViewById(R.id.info_key);
         passwdGp.editv = (EditText)view.findViewById(R.id.info_edit);
         passwdGp.keyv.setText(R.string.password);
-        passwdGp.editv.setHint(R.string.hint_password);
+        passwdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        passwdGp.delv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                passwdGp.editv.setText("");
+            }
+        });
+        passwdGp.editv.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        passwdGp.editv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.length()>0)
+                {
+                    passwdGp.delv.setVisibility(View.VISIBLE);
+                }else
+                    passwdGp.delv.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+        passwdGp.editv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b && passwdGp.editv.length()>0)
+                    passwdGp.delv.setVisibility(View.VISIBLE);
+                else
+                    passwdGp.delv.setVisibility(View.INVISIBLE);
+
+            }
+        });
 
         findViewById(R.id.forget_passwd).setOnClickListener(this);
         findViewById(R.id.user_register).setOnClickListener(this);
         findViewById(R.id.submit_btn).setOnClickListener(this);
+        findViewById(R.id.passwd_visiable).setOnClickListener(this);
     }
 
 
@@ -91,12 +143,19 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         switch (view.getId())
         {
             case R.id.user_register:
+                UiUtils.startActivity(LoginActivity.this,UserRegisterActivity.class,true);
                 break;
             case R.id.forget_passwd:
                 break;
             case R.id.submit_btn:
                 goLogin();
                 break;
+            case R.id.passwd_visiable:
+                if(passwdGp.editv.getTransformationMethod()==PasswordTransformationMethod.getInstance())
+                    passwdGp.editv.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                else
+                    passwdGp.editv.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                passwdGp.editv.setSelection(passwdGp.editv.length());
             default:
                 break;
         }

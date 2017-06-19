@@ -12,22 +12,25 @@
         android:layout_height="match_parent"
         android:id="@+id/info_key"
         android:textSize="16dp"
+        android:text="@string/verify_code"
         android:textColor="@color/c_5E4D3F"/>
 
-    <ImageView
+    <TextView
         android:layout_marginRight="10dp"
         android:layout_centerVertical="true"
         android:padding="6dp"
         android:layout_alignParentRight="true"
         android:id="@+id/info_del"
-        android:src="@mipmap/icon_del"
-        android:layout_width="wrap_content"
+        android:layout_width="105dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_brown"
+        android:textColor="@drawable/hospital_text_color_state"
+        android:textSize="15dp"
         android:gravity="center"
-        android:visibility="invisible"/>
+        android:text="@string/verify_code_resend_x"/>
     <EditText
-        android:hint="请填写信息"
         android:background="@null"
+        android:hint="@string/verify_code"
         android:layout_toRightOf="@id/info_key"
         android:layout_toLeftOf="@id/info_del"
         android:inputType="text"

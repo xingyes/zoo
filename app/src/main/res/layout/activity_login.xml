@@ -11,29 +11,35 @@
         android:layout_height="wrap_content"
         tools:bgcolor="#5E4D3F"
         tools:titleText="@string/login"/>
-
     <include layout="@layout/key_edit_item"
         android:layout_marginTop = "20dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/login_name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="50dp"
+        android:id="@+id/login_name"/>
     <View
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
-    <include layout="@layout/key_edit_item"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/login_password"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="wrap_content"
+        android:background="@color/c_FFFFFF">
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwd_visiable"
+        android:src="@mipmap/icon_calendar"/>
+    <include layout="@layout/key_edit_item"
+        android:layout_toLeftOf="@id/passwd_visiable"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/login_password"/>
+    </RelativeLayout>
+
     <View
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
@@ -41,7 +47,7 @@
 
     <TextView
         android:textSize="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/button_brown"

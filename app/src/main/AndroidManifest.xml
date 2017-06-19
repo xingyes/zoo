@@ -42,6 +42,7 @@
         <activity android:name=".hospital.TitleImgActivity"/>
         <activity android:name=".main.MainActivity"/>
         <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".login.UserRegisterActivity"/>
 
     </application>
 
