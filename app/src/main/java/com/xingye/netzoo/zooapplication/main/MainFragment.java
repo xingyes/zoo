@@ -1,6 +1,8 @@
 package com.xingye.netzoo.zooapplication.main;
 
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xingye.netzoo.xylib.utils.ToolUtil;
@@ -17,6 +20,7 @@ import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.xylib.utils.ui.CarouseFigureVPAdatper;
 import com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
+import com.xingye.netzoo.xylib.utils.ui.ViewpagerCursor;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
 import com.xingye.netzoo.zooapplication.hospital.HospitalInfoActivity;
@@ -31,11 +35,13 @@ import okhttp3.Call;
 import okhttp3.Request;
 
 
-public class MainFragment extends BaseFragment{
+public class MainFragment extends BaseFragment implements ViewPager.OnPageChangeListener {
+    private ViewpagerCursor          bannerCursor;
     private CarouselFigureViewPager  bannerView;
     private PagerAdapter             bannerAdapter;
     private GridView                 gridView;
     private BaseAdapter              gridAdapter;
+    private RelativeLayout           bannerLayout;
     private int[]      enTvArray = {R.string.entrance_0,R.string.entrance_1,R.string.entrance_2,
             R.string.entrance_3,R.string.entrance_4,R.string.entrance_5,
             R.string.entrance_6,R.string.entrance_7,R.string.entrance_8};
@@ -47,6 +53,7 @@ public class MainFragment extends BaseFragment{
     @Override
     public View initView() {
         mRoot = mContext.getLayoutInflater().inflate(R.layout.fragment_main,null);
+        bannerLayout = (RelativeLayout)mRoot.findViewById(R.id.carouse_vp_layout);
         bannerView = (CarouselFigureViewPager)mRoot.findViewById(R.id.home_banner);
         bannerAdapter = new CarouseFigureVPAdatper(this.getActivity(), true,
                 new CarouseFigureVPAdatper.CarouseFigureImageAdapterListener() {
@@ -66,16 +73,25 @@ public class MainFragment extends BaseFragment{
             }
         });
         bannerView.setAdapter(bannerAdapter);
-
+        bannerCursor = new ViewpagerCursor();
+        bannerCursor.initCursorContentView(getActivity(),bannerView,null,20);
+        bannerCursor.createCursor(bannerView.getRealCount(),bannerLayout,
+                bannerView.toRealPosition(bannerView.getCurrentItem()));
+        bannerView.addOnPageChangeListener(this);
 
         gridView = (GridView)mRoot.findViewById(R.id.home_grid);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
                 switch (position)
                 {
                     case 0:
-                        ToolUtil.startActivity(MainFragment.this.getActivity(), BookRegisterActivity.class);
+                        UiUtils.startActivity(MainFragment.this.getActivity(), BookRegisterActivity.class,true);
+                        break;
+                    case 1:
+                        bundle.putBoolean(BookRegisterActivity.ONLY_TODAY,true);
+                        UiUtils.startActivity(MainFragment.this.getActivity(), BookRegisterActivity.class,bundle,true);
                         break;
                     default:
                         break;
@@ -173,6 +189,22 @@ public class MainFragment extends BaseFragment{
 
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if(null!=bannerCursor) {
+            bannerCursor.onPageSelected(position);
+            bannerCursor.setCurrentCursorPosition(position);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 
 
     public class ViewHolder

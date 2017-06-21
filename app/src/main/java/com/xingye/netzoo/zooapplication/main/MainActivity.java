@@ -3,6 +3,7 @@ package com.xingye.netzoo.zooapplication.main;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,9 +31,17 @@ public class MainActivity extends Activity{
     private TextView    tabtv3;
     private View.OnClickListener  tabClickListener;
 
-
+    private int tab_idx = R.id.tab_0;
+    public static final String TAB_TARGET = "TAB_TARGET";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent =  getIntent();
+        if(intent == null)
+        {
+            finish();
+            return;
+        }
+
         super.onCreate(savedInstanceState);
 
         setTheme(R.style.AppTheme);
@@ -116,7 +125,9 @@ public class MainActivity extends Activity{
         findViewById(R.id.tab_1).setOnClickListener(tabClickListener);
         findViewById(R.id.tab_2).setOnClickListener(tabClickListener);
         findViewById(R.id.tab_3).setOnClickListener(tabClickListener);
-        tabClickListener.onClick(findViewById(R.id.tab_0));
+
+        tab_idx = intent.getIntExtra(TAB_TARGET,R.id.tab_0);
+        tabClickListener.onClick(findViewById(tab_idx));
     }
 
 
@@ -126,4 +137,16 @@ public class MainActivity extends Activity{
         super.onResume();
     }
 
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if(null == intent)
+            super.onNewIntent(intent);
+        else
+        {
+            tab_idx = intent.getIntExtra(TAB_TARGET,R.id.tab_0);
+            tabClickListener.onClick(findViewById(tab_idx));
+        }
+
+    }
 }

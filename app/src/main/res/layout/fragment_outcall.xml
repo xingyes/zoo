@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:background="@color/c_FFFFFF"
     android:orientation="vertical">
-    <!--<com.xingye.netzoo.xylib.utils.ui.NaviBar-->
-        <!--android:id="@+id/cate_doc_nav"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--tools:bgcolor="#5E4D3F"-->
-        <!--tools:titleText="@string/specialist"-->
-        <!--tools:leftVisible="false"/>-->
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/cate_doc_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/specialist"
+        tools:leftVisible="false"/>
 
     <RelativeLayout
         android:layout_marginLeft="8dp"
@@ -52,9 +52,69 @@
         android:layout_height="1px"
         android:background="@color/c_C8C7CC"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/outcall_list"
+    <RadioGroup
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/hospital_group"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/top_part"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="29dp"
+        android:background="@drawable/button_brown_frame"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:background="@drawable/round_tab_left_state"
+            android:button="@null"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/hospital_mid"
+            android:text="@string/hospital_center"
+            android:textColor="@drawable/hospital_text_color_state"/>
+        <RadioButton
+            android:button="@null"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/hospital_north"
+            android:text="@string/hospital_north"
+            android:textColor="@drawable/hospital_text_color_state"
+            android:background="@drawable/round_tab_mid_state"/>
+        <RadioButton
+            android:button="@null"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/hospital_south"
+            android:text="@string/hospital_south"
+            android:textColor="@drawable/hospital_text_color_state"
+            android:background="@drawable/round_tab_right_state" />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <ListView
+        android:divider="@null"
+        android:layout_width="165dp"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2EBD8"
+        android:id="@+id/main_list"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/hospital_group"
+        android:id="@+id/sub_list"
+        android:background="@color/c_FFFFFF"/>
+    </LinearLayout>
 
 </LinearLayout>

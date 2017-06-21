@@ -1,5 +1,6 @@
 package com.xingye.netzoo.zooapplication.bookregister;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -27,7 +28,8 @@ import java.util.Calendar;
 
 public class BookRegisterActivity extends FragmentActivity implements View.OnClickListener{
 
-
+    public static final String ONLY_TODAY = "ONLY_TODAY";
+    private boolean    onlyToday = false;
     private ListView   firstListV;
     private ListView   subListV;
 
@@ -44,6 +46,14 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
     private Calendar calendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        if(intent == null)
+        {
+            finish();
+            return;
+        }
+        onlyToday = intent.getBooleanExtra(ONLY_TODAY,false);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookregister);
         NaviBar naviBar = (NaviBar)findViewById(R.id.register_nav);
@@ -61,6 +71,7 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
             private int lastCheckId = -1;
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
                 if(lastCheckId==checkedId)
                     return;
                 switch (checkedId)
@@ -85,7 +96,9 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
-                ToolUtil.startActivity(BookRegisterActivity.this,CateRegisterActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putBoolean(ONLY_TODAY,onlyToday);
+                UiUtils.startActivity(BookRegisterActivity.this,CateRegisterActivity.class,bundle,true);
             }
         });
 
@@ -117,18 +130,13 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
         subAdapter.setInfo(subCates);
         subListV.setAdapter(subAdapter);
 
-        registerDayV = (TextView)findViewById(R.id.register_date);
-        registerDayV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UiUtils.hideSoftInput(BookRegisterActivity.this,searchEdit);
-                datePicker.setVisibility(View.VISIBLE);
-            }
-        });
 
         calendar = Calendar.getInstance();
+        registerDayV = (TextView)findViewById(R.id.register_date);
         registerDayV.setText(ToolUtil.toDate(calendar.getTimeInMillis(), getString(com.xingye.netzoo.xylib.R.string.x_day)));
-        datePicker = (DateTimePickerView)findViewById(R.id.date_picker);
+
+        datePicker = (DateTimePickerView) findViewById(R.id.date_picker);
+        datePicker.setVisibility(View.GONE);
         datePicker.setDateOnly(true);
         datePicker.setVisibility(View.GONE);
         datePicker.setListener(new DateTimePickerView.OnPickerListener() {
@@ -136,6 +144,16 @@ public class BookRegisterActivity extends FragmentActivity implements View.OnCli
             @Override
             public void onSubmit(String value) {
                 registerDayV.setText(value);
+            }
+        });
+        registerDayV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UiUtils.hideSoftInput(BookRegisterActivity.this, searchEdit);
+                if (onlyToday)
+                    UiUtils.makeToast(BookRegisterActivity.this, "当日预约不能选择日期");
+                else
+                    datePicker.setVisibility(View.VISIBLE);
             }
         });
 

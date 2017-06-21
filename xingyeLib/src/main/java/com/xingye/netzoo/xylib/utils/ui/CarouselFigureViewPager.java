@@ -35,6 +35,15 @@ public class CarouselFigureViewPager extends ViewPager {
     }
 
 
+    private OnPageChangeListener  mOutPageChangeListener;
+    public void setOnPageChangeListener(OnPageChangeListener listener)
+    {
+        mOutPageChangeListener = listener;
+    }
+    public void addOnPageChangeListener(OnPageChangeListener listener)
+    {
+        mOutPageChangeListener = listener;
+    }
     public void init()
     {
         super.setOnPageChangeListener(onPageChangeListener);
@@ -80,7 +89,17 @@ public class CarouselFigureViewPager extends ViewPager {
                 }
             }
             mPreviousOffset = positionOffset;
-
+            int realPosition = toRealPosition(position);
+            if (mOutPageChangeListener != null) {
+                if (null != getAdapter() && (position != 0 || position != getAdapter().getCount() - 1))
+                    mOutPageChangeListener.onPageScrolled(realPosition, positionOffset, positionOffsetPixels);
+                else {
+                    if (positionOffset > 0.5f)
+                        mOutPageChangeListener.onPageScrolled(0, 0, 0);
+                    else
+                        mOutPageChangeListener.onPageScrolled(realPosition, 0, 0);
+                }
+            }
         }
 
         @Override
@@ -88,6 +107,8 @@ public class CarouselFigureViewPager extends ViewPager {
             int realPosition = toRealPosition(position);
             if (mPreviousPosition != realPosition) {
                 mPreviousPosition = realPosition;
+                if(null!=mOutPageChangeListener)
+                    mOutPageChangeListener.onPageSelected(realPosition);
             }
         }
 
@@ -101,6 +122,8 @@ public class CarouselFigureViewPager extends ViewPager {
                     setCurrentItem(nextPosition, false);
                 }
             }
+            if(null!=mOutPageChangeListener)
+                mOutPageChangeListener.onPageScrollStateChanged(state);
         }
     };
 

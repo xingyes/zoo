@@ -1,6 +1,7 @@
 package com.xingye.netzoo.zooapplication.bookregister;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -20,6 +21,8 @@ import java.util.Calendar;
 
 public class CateRegisterActivity extends Activity implements View.OnClickListener{
 
+    private boolean onlyToday = false;
+
     private RecyclerView calendarView;
     private RecyclerView.LayoutManager  layoutManager;
     private Calendar calendar;
@@ -33,6 +36,14 @@ public class CateRegisterActivity extends Activity implements View.OnClickListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        if(intent == null)
+        {
+            finish();
+            return;
+        }
+        onlyToday = intent.getBooleanExtra(BookRegisterActivity.ONLY_TODAY,false);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cateregister);
         NaviBar naviBar = (NaviBar)findViewById(R.id.register_nav);
@@ -44,7 +55,6 @@ public class CateRegisterActivity extends Activity implements View.OnClickListen
                                        });
 
         calendar = Calendar.getInstance();
-
         calendarView = (RecyclerView)findViewById(R.id.calendar_pick);
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         calendarView.setLayoutManager(layoutManager);
@@ -62,6 +72,8 @@ public class CateRegisterActivity extends Activity implements View.OnClickListen
             }
         });
         calendarView.setAdapter(calAdapter);
+        if(onlyToday)
+            calendarView.setVisibility(View.GONE);
 
         registerDate = (TextView)findViewById(R.id.register_date);
         registerDate.setText(ToolUtil.toDate(calendar.getTimeInMillis(), getString(com.xingye.netzoo.xylib.R.string.x_day)));

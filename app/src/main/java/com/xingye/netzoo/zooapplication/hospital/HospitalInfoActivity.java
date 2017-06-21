@@ -14,6 +14,7 @@ import com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.main.MainActivity;
 import com.xingye.netzoo.zooapplication.main.MainFragment;
 import com.xingye.netzoo.zooapplication.patient.PatientModel;
 
@@ -87,6 +88,9 @@ public class HospitalInfoActivity extends Activity implements View.OnClickListen
         switch (v.getId())
         {
             case R.id.specialist_go:
+                Bundle bundle = new Bundle();
+                bundle.putInt(MainActivity.TAB_TARGET,R.id.tab_1);
+                UiUtils.startActivity(this,MainActivity.class,bundle,true);
                 break;
             case R.id.guide_go:
                 UiUtils.startActivity(this,HospitalGuideActivity.class,true);
