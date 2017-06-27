@@ -3,12 +3,9 @@ package com.xingye.netzoo.zooapplication.bookregister;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -18,10 +15,6 @@ import com.xingye.netzoo.xylib.utils.ui.DateTimePickerView;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.main.MainFragment;
-import com.xingye.netzoo.zooapplication.main.MyCenterFragment;
-import com.xingye.netzoo.zooapplication.main.OnlineFragment;
-import com.xingye.netzoo.zooapplication.main.OutcallFragment;
 
 import java.util.Calendar;
 

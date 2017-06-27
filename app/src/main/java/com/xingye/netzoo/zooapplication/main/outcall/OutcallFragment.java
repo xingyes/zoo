@@ -1,15 +1,8 @@
-package com.xingye.netzoo.zooapplication.main;
+package com.xingye.netzoo.zooapplication.main.outcall;
 
-import android.media.Image;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,13 +11,12 @@ import android.widget.RadioGroup;
 
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
-import com.xingye.netzoo.zooapplication.bookregister.CateRegisterActivity;
 import com.xingye.netzoo.zooapplication.bookregister.MainCategoryAdapter;
 import com.xingye.netzoo.zooapplication.bookregister.SubCategoryAdapter;
+import com.xingye.netzoo.zooapplication.main.BaseFragment;
 
 
-public class OutcallFragment extends BaseFragment{
+public class OutcallFragment extends BaseFragment {
 
     private ImageView    delv;
     private EditText     searchEdit;

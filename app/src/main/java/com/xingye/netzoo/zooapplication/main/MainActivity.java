@@ -10,15 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.main.mycenter.MyCenterFragment;
+import com.xingye.netzoo.zooapplication.main.online.OnlineFragment;
+import com.xingye.netzoo.zooapplication.main.outcall.OutcallFragment;
 
 
 public class MainActivity extends Activity{
 
     private FragmentManager fragmentManager;
     private MainFragment       mainFragment;
-    private OutcallFragment    outcallFragment;
-    private OnlineFragment     onlineFragment;
-    private MyCenterFragment   myCenterFragment;
+    private OutcallFragment outcallFragment;
+    private OnlineFragment onlineFragment;
+    private MyCenterFragment myCenterFragment;
     private int   lastCheckId = -1;
 
     private ImageView   tabimv0;
