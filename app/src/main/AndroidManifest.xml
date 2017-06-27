@@ -45,6 +45,8 @@
         <activity android:name=".login.UserRegisterActivity"/>
         <activity android:name=".login.ResetPasswdActivity"/>
 
+        <activity android:name=".medicreport.ReportQueryActivity"/>
+
 
     </application>
 

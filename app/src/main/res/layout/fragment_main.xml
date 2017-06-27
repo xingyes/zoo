@@ -11,16 +11,14 @@
         tools:bgcolor="#5E4D3F"
         tools:titleTextImg="@mipmap/home_title"
         tools:leftVisible="false"/>
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
-            <!---->
-        <!--</LinearLayout>-->
-    <!--</ScrollView>-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +30,7 @@
         tools:hdpi_len="133dp"
         tools:isCarousel="true"/>
     </RelativeLayout>
-    <GridView
+    <com.xingye.netzoo.xylib.utils.ui.NestGridView
         android:horizontalSpacing="1px"
         android:verticalSpacing="1px"
         android:background="#CFC5BC"
@@ -40,5 +38,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/home_grid"
         android:numColumns="3"/>
-
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

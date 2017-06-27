@@ -19,11 +19,13 @@ import com.xingye.netzoo.xylib.utils.net.OkhttpUtil;
 import com.xingye.netzoo.xylib.utils.net.RequestFactory;
 import com.xingye.netzoo.xylib.utils.ui.CarouseFigureVPAdatper;
 import com.xingye.netzoo.xylib.utils.ui.CarouselFigureViewPager;
+import com.xingye.netzoo.xylib.utils.ui.NestGridView;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.xylib.utils.ui.ViewpagerCursor;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
 import com.xingye.netzoo.zooapplication.hospital.HospitalInfoActivity;
+import com.xingye.netzoo.zooapplication.medicreport.ReportQueryActivity;
 import com.xingye.netzoo.zooapplication.utils.Config;
 
 import java.io.IOException;
@@ -39,7 +41,7 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
     private ViewpagerCursor          bannerCursor;
     private CarouselFigureViewPager  bannerView;
     private PagerAdapter             bannerAdapter;
-    private GridView                 gridView;
+    private NestGridView gridView;
     private BaseAdapter              gridAdapter;
     private RelativeLayout           bannerLayout;
     private int[]      enTvArray = {R.string.entrance_0,R.string.entrance_1,R.string.entrance_2,
@@ -79,7 +81,7 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
                 bannerView.toRealPosition(bannerView.getCurrentItem()));
         bannerView.addOnPageChangeListener(this);
 
-        gridView = (GridView)mRoot.findViewById(R.id.home_grid);
+        gridView = (NestGridView)mRoot.findViewById(R.id.home_grid);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -93,6 +95,9 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
                         bundle.putBoolean(BookRegisterActivity.ONLY_TODAY,true);
                         UiUtils.startActivity(MainFragment.this.getActivity(), BookRegisterActivity.class,bundle,true);
                         break;
+                    case 2:
+                        UiUtils.startActivity(MainFragment.this.getActivity(), ReportQueryActivity.class,true);
+
                     default:
                         break;
                 }

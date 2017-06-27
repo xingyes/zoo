@@ -70,6 +70,11 @@
 
     <string name="hospital_addr">医院地址：沈阳市皇姑区北陵大街33号</string>
 
+    <string name="e_prescription">电子处方</string>
+    <string name="check_report">检查报告</string>
+    <string name="inspection_report">检验报告</string>
+
+
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>
     <string name="network_error_info">如果网络正常，建议稍后片刻再试</string>
