@@ -64,18 +64,21 @@ public class HospitalGuideActivity extends Activity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.outpatient_guide:
+                bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.outpatient_guide));
                 bundle.putString(TitleImgActivity.TITLE_TXT,getString(R.string.outpatient_guide));
                 bundle.putInt(TitleImgActivity.TITLE_IMG,R.mipmap.icon_outpatient);
                 bundle.putInt(TitleImgActivity.IMG_RID,R.mipmap.outpation_detail);
                 UiUtils.startActivity(HospitalGuideActivity.this,TitleImgActivity.class,bundle,true);
                 break;
             case R.id.inside_map:
+                bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.inside_map));
                 bundle.putString(TitleImgActivity.TITLE_TXT,getString(R.string.inside_map));
                 bundle.putInt(TitleImgActivity.TITLE_IMG,R.mipmap.guide);
                 bundle.putInt(TitleImgActivity.IMG_RID,R.mipmap.hospital_map);
                 UiUtils.startActivity(HospitalGuideActivity.this,TitleImgActivity.class,bundle,true);
                 break;
             case R.id.to_hospital:
+                bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.to_hospital_map));
                 bundle.putString(TitleImgActivity.TITLE_TXT,getString(R.string.to_hospital_map));
                 bundle.putInt(TitleImgActivity.TITLE_IMG,R.mipmap.map_poi);
                 bundle.putString(TitleImgActivity.BRIEF_TXT,getString(R.string.hospital_addr));

@@ -4,13 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
-import android.widget.TextView;
-
-import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.hospital.TitleImgActivity;
 import com.xingye.netzoo.zooapplication.main.MainActivity;
 
 

@@ -8,8 +8,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Animatable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -28,6 +31,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.controller.BaseControllerListener;
+import com.facebook.drawee.controller.ControllerListener;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.image.ImageInfo;
 import com.xingye.netzoo.xylib.R;
 
 
@@ -675,4 +684,35 @@ public class UiUtils {
 //		popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
 //		return popupWindow;
 //	}
+
+
+	public static void setControllerListener(final SimpleDraweeView simpleDraweeView, String imagePath,
+											 final int imageWidth) {
+		final ViewGroup.LayoutParams layoutParams = simpleDraweeView.getLayoutParams();
+		ControllerListener controllerListener = new BaseControllerListener<ImageInfo>() {
+			@Override
+			public void onFinalImageSet(String id, @Nullable ImageInfo imageInfo, @Nullable Animatable anim) {
+				if (imageInfo == null) {
+					return;
+				}
+				int height = imageInfo.getHeight();
+				int width = imageInfo.getWidth();
+				layoutParams.width = imageWidth;
+				layoutParams.height = (int) ((float) (imageWidth * height) / (float) width);
+				simpleDraweeView.setLayoutParams(layoutParams);
+			}
+
+			@Override
+			public void onIntermediateImageSet(String id, @Nullable ImageInfo imageInfo) {
+			}
+
+			@Override
+			public void onFailure(String id, Throwable throwable) {
+				throwable.printStackTrace();
+			}
+		};
+		DraweeController controller = Fresco.newDraweeControllerBuilder().setControllerListener(controllerListener).
+				setUri(Uri.parse(imagePath)).build();
+		simpleDraweeView.setController(controller);
+	}
 }

@@ -15,11 +15,6 @@ import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.RecycleViewDivider;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
-import com.xingye.netzoo.zooapplication.bookregister.CateRegisterActivity;
-import com.xingye.netzoo.zooapplication.bookregister.DocRegisterActivity;
-import com.xingye.netzoo.zooapplication.bookregister.DoctorAdapter;
-import com.xingye.netzoo.zooapplication.bookregister.DoctorModel;
 import com.xingye.netzoo.zooapplication.hospital.TitleImgActivity;
 
 import java.util.ArrayList;
@@ -28,7 +23,10 @@ import java.util.ArrayList;
 public class ReportQueryActivity extends FragmentActivity implements View.OnClickListener{
 
 
+    private ArrayList<ReportModel> resultListData;
     private RadioGroup reportGp;
+    private int lastCheckId = -1;
+
     private RecyclerView reportList;
     private ReportAdapter  reportAdapter;
     @Override
@@ -51,7 +49,6 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
 
         reportGp = (RadioGroup)findViewById(R.id.report_group);
         reportGp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            private int lastCheckId = -1;
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 if(lastCheckId==checkedId)
@@ -68,9 +65,33 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
             public void onItemClick(View view, Object tag) {
                 if(tag==null || !(tag instanceof Integer))
                     return;
+                int pos = (Integer)tag;
+                ReportModel reportitem = resultListData.get(pos);
                 Bundle bundle = new Bundle();
-                UiUtils.startActivity(ReportQueryActivity.this, TitleImgActivity.class,bundle,true);
+                switch (lastCheckId)
+                {
+                    case R.id.e_prescription:
+                        bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.e_prescription));
+                        break;
+                    case R.id.check_report:
+                        bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.check_report));
+                        break;
+                    case R.id.inspection_report:
+                    default:
+                        bundle.putString(TitleImgActivity.NAV_TXT,getString(R.string.inspection_report));
+                        break;
 
+                }
+                bundle.putString(TitleImgActivity.TITLE_TXT,reportitem.formTitle());
+                bundle.putInt(TitleImgActivity.TITLE_IMG,R.mipmap.icon_calendar);
+
+                if(pos%3==0)
+                    bundle.putString(TitleImgActivity.IMG_URL,"http://www.sybct.com/Ngwbl/Case25-A.jpg");
+                else if(pos%3 == 1)
+                    bundle.putString(TitleImgActivity.IMG_URL,"http://s4.sinaimg.cn/large/006fURXhzy6XRvsVJBNb3&690");
+                else
+                    bundle.putString(TitleImgActivity.IMG_URL,"https://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/55e736d12f2eb9386ce6c408d4628535e4dd6f45.jpg");
+                UiUtils.startActivity(ReportQueryActivity.this, TitleImgActivity.class,bundle,true);
             }
         });
         reportList.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
@@ -87,7 +108,7 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
     private void fakeReport(int checkedId)
     {
         ReportModel rp;
-        ArrayList<ReportModel> resultListData = new ArrayList<ReportModel>();
+        resultListData = new ArrayList<ReportModel>();
         switch (checkedId)
         {
             case R.id.e_prescription:
