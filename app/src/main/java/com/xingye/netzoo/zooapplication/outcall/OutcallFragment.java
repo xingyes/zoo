@@ -1,5 +1,6 @@
-package com.xingye.netzoo.zooapplication.main.outcall;
+package com.xingye.netzoo.zooapplication.outcall;
 
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -86,7 +87,9 @@ public class OutcallFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 UiUtils.hideSoftInput(OutcallFragment.this.getActivity(),searchEdit);
-                UiUtils.makeToast(OutcallFragment.this.getActivity(),"去医生介绍 和 出诊介绍");
+                Bundle bundle = new Bundle();
+                bundle.putString(OutcallDocActivity.DOC_CATE,subCates[i]);
+                UiUtils.startActivity(getActivity(),OutcallDocActivity.class,bundle,true);
             }
         });
 

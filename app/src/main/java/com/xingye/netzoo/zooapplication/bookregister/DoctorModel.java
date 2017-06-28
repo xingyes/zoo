@@ -8,4 +8,5 @@ public class DoctorModel {
     public String name;
     public String head;
     public String title;
+    public String brief;
 }

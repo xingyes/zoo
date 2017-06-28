@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/doc_imv"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="89dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/c_474747"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doc_name"
+            android:textSize="20dp"
+            android:text="医生A"
+            android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/c_474747"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/outcall_time"
+                android:textSize="14dp"
+                android:text="周一  上午 10:00-12:00"/>
+            <ImageView
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@mipmap/icon_time"
+                android:layout_toLeftOf="@id/outcall_time"/>
+
+        </RelativeLayout>
+        <TextView
+            android:textColor="@color/c_474747"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doc_title"
+            android:textSize="16dp"
+            android:text="主任"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#474747"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doc_info"
+        android:textSize="16dp"
+        android:text="主任"
+        android:visibility="gone"/>
+
+</RelativeLayout>

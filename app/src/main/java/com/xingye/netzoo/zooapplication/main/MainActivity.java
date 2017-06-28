@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.main.mycenter.MyCenterFragment;
 import com.xingye.netzoo.zooapplication.main.online.OnlineFragment;
-import com.xingye.netzoo.zooapplication.main.outcall.OutcallFragment;
+import com.xingye.netzoo.zooapplication.outcall.OutcallFragment;
 
 
 public class MainActivity extends Activity{

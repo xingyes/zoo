@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:layout_alignParentTop="true"
+        android:id="@+id/docdetail_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/doc_imv"/>
+    <TextView
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doc_name"
+        android:textSize="20dp"
+        android:textColor="@color/c_474747"
+        android:text="好医生"/>
+    <TextView
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doc_title"
+        android:textSize="12dp"
+        android:textColor="@color/c_474747"
+        android:text="副主任，长江学者，好医生"/>
+    <TextView
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doc_brief"
+        android:textSize="16dp"
+        android:textColor="@color/c_474747"
+        android:text="原中国医科大学附属第一医院心内科主任，享受国务院政府特殊津贴待遇。率先在东北地区主持开创世界先进的介入性心脏病学新医疗技术；开创我国现场直播手术表演学术交流会，承担国家科委(973)国家攻关、省重点课题7项。兼任国家心血管中心专家委员会委员、世界高血压联盟(中国)理事等职务。"/>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

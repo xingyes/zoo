@@ -47,6 +47,9 @@
 
         <activity android:name=".medicreport.ReportQueryActivity"/>
 
+        <activity android:name=".outcall.OutcallDocActivity"/>
+        <activity android:name=".outcall.DocDetailActivity"/>
+
 
     </application>
 
