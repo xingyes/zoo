@@ -20,6 +20,7 @@ import com.xingye.netzoo.zooapplication.bookregister.CateRegisterActivity;
 import com.xingye.netzoo.zooapplication.bookregister.DocRegisterActivity;
 import com.xingye.netzoo.zooapplication.bookregister.DoctorAdapter;
 import com.xingye.netzoo.zooapplication.bookregister.DoctorModel;
+import com.xingye.netzoo.zooapplication.hospital.TitleImgActivity;
 
 import java.util.ArrayList;
 
@@ -65,6 +66,10 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
         reportAdapter = new ReportAdapter(new ReportAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object tag) {
+                if(tag==null || !(tag instanceof Integer))
+                    return;
+                Bundle bundle = new Bundle();
+                UiUtils.startActivity(ReportQueryActivity.this, TitleImgActivity.class,bundle,true);
 
             }
         });

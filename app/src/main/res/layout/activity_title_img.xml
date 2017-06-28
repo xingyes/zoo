@@ -26,9 +26,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentLeft="true"
                 android:id="@+id/pre_title_imgv"
-                android:src="@mipmap/icon_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_centerVertical="true"/>
             <TextView
                 android:id="@+id/title_v"

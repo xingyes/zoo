@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,14 +22,18 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
     private TextView     titlev;
     private TextView     briefv;
     private SimpleDraweeView    imgv;
-    private ImageView    preimv;
+    private ImageView    titleimv;
 
-    public static final int TYPE_OUTPATIENT = 0;
-    public static final int TYPE_INSIDEMAP = 1;
-    public static final int TYPE_TOHOSPITAL = 2;
-
-    public int infoType = TYPE_OUTPATIENT;
-    public static String INFO_SHOW_TYPE = "INFO_SHOW_TYPE";
+    public static String TITLE_TXT = "TITLE_TXT";
+    public static String TITLE_IMG = "TITLE_IMG";
+    public static String BRIEF_TXT = "BRIEF_TXT";
+    public static String IMG_URL = "IMG_URL";
+    public static String IMG_RID = "IMG_RID";
+    private int       titlePreImgRid;
+    private String    titleTxt;
+    private String    briefTxt;
+    private String    imgUrl;
+    private int       imgRid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,54 +55,36 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
                                            }
                                        });
 
-        preimv = (ImageView)findViewById(R.id.pre_title_imgv);
+        titleimv = (ImageView)findViewById(R.id.pre_title_imgv);
         titlev = (TextView)findViewById(R.id.title_v);
-
         briefv = (TextView)findViewById(R.id.brief_tv);
         imgv = (SimpleDraweeView)findViewById(R.id.info_imv);
-        infoType = intent.getIntExtra(INFO_SHOW_TYPE,TYPE_OUTPATIENT);
+
+
+        titleTxt = intent.getStringExtra(TITLE_TXT);
+        titlePreImgRid = intent.getIntExtra(TITLE_IMG,-1);
+        briefTxt = intent.getStringExtra(BRIEF_TXT);
+        imgRid = intent.getIntExtra(IMG_RID,-1);
+
+        naviBar.setTitle(titleTxt);
+        titlev.setText(titleTxt);
+
+        if(titlePreImgRid>0)
+            titleimv.setImageResource(titlePreImgRid);
+
+        briefv.setVisibility(TextUtils.isEmpty(briefTxt) ? View.GONE : View.VISIBLE);
+        briefv.setText(TextUtils.isEmpty(briefTxt) ? "": briefTxt);
+
         Bitmap bitmap;
         ViewGroup.LayoutParams lp = imgv.getLayoutParams();
-        switch (infoType)
+        if(imgRid>=0)
         {
-            case TYPE_INSIDEMAP:
-                naviBar.setTitle(R.string.inside_map);
-                preimv.setImageResource(R.mipmap.guide);
-                titlev.setText(R.string.inside_map);
-                briefv.setVisibility(View.GONE);
-                bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.hospital_map);
-                lp.width = DPIUtil.getWidth()-20;
-                lp.height = bitmap.getHeight()*lp.width/bitmap.getWidth();
-                imgv.setLayoutParams(lp);
-                imgv.setImageURI("res:///" + R.mipmap.hospital_map);
-                break;
-            case TYPE_TOHOSPITAL:
-                naviBar.setTitle(R.string.to_hospital_map);
-                preimv.setImageResource(R.mipmap.map_poi);
-                titlev.setText(R.string.to_hospital_map);
-                briefv.setVisibility(View.VISIBLE);
-                briefv.setText(R.string.hospital_addr);
-                bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.to_hospital);
-                lp.width = DPIUtil.getWidth()-20;
-                lp.height = bitmap.getHeight()*lp.width/bitmap.getWidth();
-                imgv.setLayoutParams(lp);
-                imgv.setImageURI("res:///" + R.mipmap.to_hospital);
-                break;
-            case TYPE_OUTPATIENT:
-            default:
-                naviBar.setTitle(R.string.outpatient_guide);
-                preimv.setImageResource(R.mipmap.icon_outpatient);
-                titlev.setText(R.string.see_doctor_process);
-                briefv.setVisibility(View.GONE);
-                bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.outpation_detail);
-                lp.width = DPIUtil.getWidth()-20;
-                lp.height = bitmap.getHeight()*lp.width/bitmap.getWidth();
-                imgv.setLayoutParams(lp);
-                imgv.setImageURI("res:///" + R.mipmap.outpation_detail);
-                break;
+            bitmap = BitmapFactory.decodeResource(getResources(),imgRid);
+            lp.width = DPIUtil.getWidth()-20;
+            lp.height = bitmap.getHeight()*lp.width/bitmap.getWidth();
+            imgv.setLayoutParams(lp);
+            imgv.setImageURI("res:///" + imgRid);
         }
-
-
     }
 
 
