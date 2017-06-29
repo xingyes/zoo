@@ -1,21 +1,24 @@
 package com.xingye.netzoo.zooapplication.mycenter;
 
+import android.app.Dialog;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.xingye.netzoo.xylib.utils.ui.AppDialog;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
+import com.xingye.netzoo.xylib.utils.ui.RadioDialog;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.bookregister.RegisterDetailActivity;
 import com.xingye.netzoo.zooapplication.login.LoginActivity;
 import com.xingye.netzoo.zooapplication.login.LoginUser;
 import com.xingye.netzoo.zooapplication.login.UserRegisterActivity;
 import com.xingye.netzoo.zooapplication.main.BaseFragment;
 
+import java.util.ArrayList;
+
 import io.realm.Realm;
-import io.realm.RealmChangeListener;
-import io.realm.RealmResults;
 
 
 public class MyCenterFragment extends BaseFragment implements View.OnClickListener {
@@ -25,6 +28,12 @@ public class MyCenterFragment extends BaseFragment implements View.OnClickListen
 
     private Realm     realm;
     private LoginUser loginUser;
+
+    private RadioDialog   radioDialog;
+    private RadioDialog.RadioAdapter   radioAdapter;
+    private ArrayList<String> medicTypeStrs;
+    private ArrayList<String> picTypeStrs;
+
 
     @Override
     public View initView() {
@@ -74,7 +83,7 @@ public class MyCenterFragment extends BaseFragment implements View.OnClickListen
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UiUtils.makeToast(getActivity(),R.string.my_doctors);
+                UiUtils.startActivity(getActivity(), DoctorHistoryActivity.class,true);
             }
         });
         /**
@@ -82,13 +91,50 @@ public class MyCenterFragment extends BaseFragment implements View.OnClickListen
          */
         view = mRoot.findViewById(R.id.my_medic_record);
         itemtv = (TextView)view.findViewById(R.id.info_key);
-        itemtv.setText(R.string.my_medic_record);
+        itemtv.setText(R.string.my_medic_records);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UiUtils.makeToast(getActivity(),R.string.my_medic_record);
+                if(medicTypeStrs==null)
+                {
+                    medicTypeStrs = new ArrayList<String>();
+                    medicTypeStrs.add(getString(R.string.out_medic_record));
+                    medicTypeStrs.add(getString(R.string.stay_medic_record));
+                }
+                if(null ==radioAdapter)
+                    radioAdapter = new RadioDialog.RadioAdapter(getActivity());
+
+                if (null == radioDialog) {
+                    radioDialog = new RadioDialog(getActivity(),
+                            new AppDialog.OnClickListener() {
+                                @Override
+                                public void onDialogClick(int nButtonId) {
+                                    if(nButtonId == Dialog.BUTTON_NEGATIVE)
+                                        radioDialog.dismiss();
+                                }
+                            }, radioAdapter);
+                    radioDialog.setProperty(R.string.recode_choose);
+                    radioDialog.setCancelable(true);
+                }
+                radioDialog.setRadioSelectListener(new RadioDialog.OnRadioSelectListener() {
+                    @Override
+                    public void onRadioItemClick(int which) {
+                        radioAdapter.setPickIdx(-1);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(MedicRecordListActivity.MEDIC_RECORD_TYPE,
+                                which ==0 ?
+                                        MedicRecordListActivity.OUT_MEDIC_RECORD :
+                                        MedicRecordListActivity.STAY_MEDIC_RECORD);
+                        UiUtils.startActivity(getActivity(),MedicRecordListActivity.class,bundle,true);
+                    }
+                });
+                radioAdapter.setList(medicTypeStrs, -1);
+                radioAdapter.notifyDataSetChanged();
+
+                radioDialog.show();
             }
         });
+
         /**
          * 检验报告
          */
@@ -98,7 +144,7 @@ public class MyCenterFragment extends BaseFragment implements View.OnClickListen
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UiUtils.makeToast(getActivity(),R.string.my_check_report);
+                UiUtils.startActivity(getActivity(),ReportListActivity.class,true);
             }
         });
         /**
@@ -110,7 +156,40 @@ public class MyCenterFragment extends BaseFragment implements View.OnClickListen
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UiUtils.makeToast(getActivity(),R.string.my_pic_record);
+                if(picTypeStrs==null)
+                {
+                    picTypeStrs = new ArrayList<String>();
+                    picTypeStrs.add(getString(R.string.pic_record_ct));
+                    picTypeStrs.add(getString(R.string.pic_record_x));
+                    picTypeStrs.add(getString(R.string.pic_record_b));
+                }
+                if(null ==radioAdapter)
+                    radioAdapter = new RadioDialog.RadioAdapter(getActivity());
+
+                if (null == radioDialog) {
+                    radioDialog = new RadioDialog(getActivity(),
+                            new AppDialog.OnClickListener() {
+                                @Override
+                                public void onDialogClick(int nButtonId) {
+                                    if(nButtonId == Dialog.BUTTON_NEGATIVE)
+                                        radioDialog.dismiss();
+                                }
+                            }, radioAdapter);
+                    radioDialog.setProperty(R.string.recode_choose);
+                    radioDialog.setCancelable(true);
+                }
+                radioDialog.setRadioSelectListener(new RadioDialog.OnRadioSelectListener() {
+                    @Override
+                    public void onRadioItemClick(int which) {
+                        radioAdapter.setPickIdx(-1);
+                        UiUtils.startActivity(getActivity(),ReportListActivity.class,true);
+                    }
+                });
+                radioAdapter.setList(picTypeStrs, -1);
+                radioAdapter.notifyDataSetChanged();
+
+                radioDialog.show();
+
             }
         });
 

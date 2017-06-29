@@ -116,7 +116,7 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
                 for(int i=1;i<4;i++)
                 {
                     rp = new ReportModel();
-                    rp.date = "2017-07-0" +i;
+                    rp.time = System.currentTimeMillis()- 86400000*i;
                     rp.title = getString(R.string.e_prescription) + i;
                     resultListData.add(rp);
                 }
@@ -127,7 +127,7 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
                 for(int i=1;i < 5;i++)
                 {
                     rp = new ReportModel();
-                    rp.date = "2017-08-0" +i;
+                    rp.time = System.currentTimeMillis()- 86400000*i;
                     rp.title = getString(R.string.check_report) + i;
                     resultListData.add(rp);
                 }
@@ -138,7 +138,7 @@ public class ReportQueryActivity extends FragmentActivity implements View.OnClic
                 for(int i=3;i<7;i++)
                 {
                     rp = new ReportModel();
-                    rp.date = "2017-09-0" +i;
+                    rp.time = System.currentTimeMillis()- 86400000*i;
                     rp.title = getString(R.string.inspection_report) + i;
                     resultListData.add(rp);
                 }

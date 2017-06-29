@@ -51,7 +51,10 @@
         <activity android:name=".outcall.DocDetailActivity"/>
 
         <activity android:name=".mycenter.SettingActivity"/>
+        <activity android:name=".mycenter.DoctorHistoryActivity"/>
         <activity android:name=".mycenter.MedicHistoryActivity"/>
+        <activity android:name=".mycenter.MedicRecordListActivity"/>
+        <activity android:name=".mycenter.ReportListActivity"/>
 
     </application>
 

@@ -81,15 +81,21 @@
     <string name="inspection_report">检验报告</string>
 
     <string name="my_verify">身份验证</string>
-    <string name="my_medic_record">就诊记录</string>
+    <string name="my_medic_history">就诊记录</string>
     <string name="my_doctors">我的医生</string>
-    <string name="my_medic_history">病历查询</string>
+    <string name="my_medic_records">病历查询</string>
     <string name="my_check_report">检验报告</string>
     <string name="my_pic_record">影像报告</string>
 
+    <string name="out_medic_record">门诊病历</string>
+    <string name="stay_medic_record">住院病历</string>
     <string name="about_us">关于我们</string>
     <string name="version_check">版本检查</string>
 
+    <string name="pic_record_ct">CT报告</string>
+    <string name="pic_record_x">X光报告</string>
+    <string name="pic_record_b">B超报告</string>
+    <string name="recode_choose">报告选择</string>
 
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>

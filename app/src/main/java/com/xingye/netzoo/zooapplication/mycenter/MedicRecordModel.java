@@ -6,7 +6,7 @@ import com.xingye.netzoo.xylib.utils.ToolUtil;
  * Created by yx on 17/6/11.
  */
 
-public class MedicItemModel extends Base3tvModel{
+public class MedicRecordModel extends Base3tvModel{
     public long   time;
     public String category;
 

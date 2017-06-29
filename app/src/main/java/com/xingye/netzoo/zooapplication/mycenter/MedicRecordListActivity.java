@@ -1,6 +1,7 @@
 package com.xingye.netzoo.zooapplication.mycenter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -12,6 +13,7 @@ import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.RecycleViewDivider;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.bookregister.DoctorModel;
 import com.xingye.netzoo.zooapplication.login.LoginUser;
 
 import java.util.ArrayList;
@@ -19,15 +21,29 @@ import java.util.ArrayList;
 import io.realm.Realm;
 
 
-public class MedicHistoryActivity extends Activity{
+public class MedicRecordListActivity extends Activity{
+
+    public static final String MEDIC_RECORD_TYPE = "MEDIC_RECORD_TYPE";
+    public static final int    OUT_MEDIC_RECORD = 0;
+    public static final int    STAY_MEDIC_RECORD = 1;
+    private int         medicRecordType;
 
     private Realm   realm;
     private LoginUser loginUser;
-    private RecyclerView medicRecyclerV;
-    private ArrayList<MedicRecordModel> medicHistory = new ArrayList<MedicRecordModel>();
-    private Result3tvAdapter medicAdapter;
+    private RecyclerView resultRecyclerV;
+    private ArrayList<MedicRecordModel> results = new ArrayList<MedicRecordModel>();
+    private Result3tvAdapter resultAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        if(intent == null)
+        {
+            finish();
+            return;
+        }
+
+        medicRecordType = intent.getIntExtra(MEDIC_RECORD_TYPE,OUT_MEDIC_RECORD);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_list);
 
@@ -38,18 +54,20 @@ public class MedicHistoryActivity extends Activity{
                                                 finish();
                                            }
                                        });
-        naviBar.setTitle(R.string.my_medic_history);
 
-        medicRecyclerV = (RecyclerView)findViewById(R.id.result_list);
-        medicAdapter = new Result3tvAdapter(new Result3tvAdapter.OnItemClickListener() {
+
+        naviBar.setTitle(medicRecordType == OUT_MEDIC_RECORD ? R.string.out_medic_record : R.string.stay_medic_record);
+
+        resultRecyclerV = (RecyclerView)findViewById(R.id.result_list);
+        resultAdapter = new Result3tvAdapter(new Result3tvAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object tag) {
 
             }
         });
-        medicRecyclerV.setAdapter(medicAdapter);
-        medicRecyclerV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        medicRecyclerV.addItemDecoration(new RecycleViewDivider(
+        resultRecyclerV.setAdapter(resultAdapter);
+        resultRecyclerV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        resultRecyclerV.addItemDecoration(new RecycleViewDivider(
                 this, DividerItemDecoration.VERTICAL,3,Color.GRAY));
 
     }
@@ -67,23 +85,23 @@ public class MedicHistoryActivity extends Activity{
             UiUtils.makeToast(this,"请重新登录");
             finish();
         }
-        queryMedicHistory();
+        queryMedicRecords();
     }
 
 
-    private void queryMedicHistory()
+    private void queryMedicRecords()
     {
 
-        medicHistory.clear();
+        results.clear();
         for(int i=0; i < 8;i++)
         {
-            MedicRecordModel model = new MedicRecordModel();
-            model.category = "胸内科" +i;
-            model.time = System.currentTimeMillis() - 86400000*i;
-            medicHistory.add(model);
+            MedicRecordModel record = new MedicRecordModel();
+            record.category = "胸内科" +i;
+            record.time = System.currentTimeMillis() - 86400000*i;
+            results.add(record);
         }
-        medicAdapter.setDataset(medicHistory);
+        resultAdapter.setDataset(results);
 
-        medicAdapter.notifyDataSetChanged();
+        resultAdapter.notifyDataSetChanged();
     }
 }

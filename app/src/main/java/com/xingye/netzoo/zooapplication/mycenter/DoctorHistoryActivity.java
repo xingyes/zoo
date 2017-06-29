@@ -12,6 +12,7 @@ import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.RecycleViewDivider;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.bookregister.DoctorModel;
 import com.xingye.netzoo.zooapplication.login.LoginUser;
 
 import java.util.ArrayList;
@@ -19,13 +20,13 @@ import java.util.ArrayList;
 import io.realm.Realm;
 
 
-public class MedicHistoryActivity extends Activity{
+public class DoctorHistoryActivity extends Activity{
 
     private Realm   realm;
     private LoginUser loginUser;
-    private RecyclerView medicRecyclerV;
-    private ArrayList<MedicRecordModel> medicHistory = new ArrayList<MedicRecordModel>();
-    private Result3tvAdapter medicAdapter;
+    private RecyclerView doctorRecyclerV;
+    private ArrayList<DoctorModel> doctors = new ArrayList<DoctorModel>();
+    private Result3tvAdapter doctorAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,18 +39,18 @@ public class MedicHistoryActivity extends Activity{
                                                 finish();
                                            }
                                        });
-        naviBar.setTitle(R.string.my_medic_history);
+        naviBar.setTitle(R.string.my_doctors);
 
-        medicRecyclerV = (RecyclerView)findViewById(R.id.result_list);
-        medicAdapter = new Result3tvAdapter(new Result3tvAdapter.OnItemClickListener() {
+        doctorRecyclerV = (RecyclerView)findViewById(R.id.result_list);
+        doctorAdapter = new Result3tvAdapter(new Result3tvAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object tag) {
 
             }
         });
-        medicRecyclerV.setAdapter(medicAdapter);
-        medicRecyclerV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        medicRecyclerV.addItemDecoration(new RecycleViewDivider(
+        doctorRecyclerV.setAdapter(doctorAdapter);
+        doctorRecyclerV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        doctorRecyclerV.addItemDecoration(new RecycleViewDivider(
                 this, DividerItemDecoration.VERTICAL,3,Color.GRAY));
 
     }
@@ -67,23 +68,24 @@ public class MedicHistoryActivity extends Activity{
             UiUtils.makeToast(this,"请重新登录");
             finish();
         }
-        queryMedicHistory();
+        queryMyDoctors();
     }
 
 
-    private void queryMedicHistory()
+    private void queryMyDoctors()
     {
 
-        medicHistory.clear();
+        doctors.clear();
         for(int i=0; i < 8;i++)
         {
-            MedicRecordModel model = new MedicRecordModel();
-            model.category = "胸内科" +i;
-            model.time = System.currentTimeMillis() - 86400000*i;
-            medicHistory.add(model);
+            DoctorModel doc = new DoctorModel();
+            doc.category = "胸内科" +i;
+            doc.name = "医生" + i;
+            doc.title = "副主任医师";
+            doctors.add(doc);
         }
-        medicAdapter.setDataset(medicHistory);
+        doctorAdapter.setDataset(doctors);
 
-        medicAdapter.notifyDataSetChanged();
+        doctorAdapter.notifyDataSetChanged();
     }
 }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by yx on 17/6/11.
  */
 
-public class Resut3tvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class Result3tvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Base3tvModel > dataset = new ArrayList<Base3tvModel>();
 
@@ -26,7 +26,7 @@ public class Resut3tvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public void onItemClick(View view, Object tag);
     };
 
-    public Resut3tvAdapter(OnItemClickListener listener)
+    public Result3tvAdapter(OnItemClickListener listener)
     {
         mOnItemClickListener = listener;
     }

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:bgcolor="#5E4D3F"
-        tools:titleText="@string/my_medic_record"/>
+        tools:titleText="@string/my_medic_records"/>
 
 
     <android.support.v7.widget.RecyclerView
