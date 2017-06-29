@@ -61,9 +61,10 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         super.onDraw(c, parent, state);
         if (mOrientation == LinearLayoutManager.VERTICAL) {
-            drawVertical(c, parent);
-        } else {
             drawHorizontal(c, parent);
+        } else {
+            drawVertical(c, parent);
+
         }
     }
 

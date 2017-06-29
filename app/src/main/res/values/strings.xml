@@ -11,6 +11,12 @@
 	<string name="month">月</string>
 	<string name="all">全部</string>
 
+    <string name="tab_txt_0">首页</string>
+    <string name="tab_txt_1">专家出诊表</string>
+    <string name="tab_txt_2">在线咨询</string>
+    <string name="tab_txt_3">我的中心</string>
+
+
     <string name="entrance_0">预约挂号</string>
     <string name="entrance_1">当日预约</string>
     <string name="entrance_2">查看报告</string>
@@ -74,6 +80,16 @@
     <string name="check_report">检查报告</string>
     <string name="inspection_report">检验报告</string>
 
+    <string name="my_verify">身份验证</string>
+    <string name="my_medic_record">就诊记录</string>
+    <string name="my_doctors">我的医生</string>
+    <string name="my_medic_history">病历查询</string>
+    <string name="my_check_report">检验报告</string>
+    <string name="my_pic_record">影像报告</string>
+
+    <string name="about_us">关于我们</string>
+    <string name="version_check">版本检查</string>
+
 
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>
@@ -136,11 +152,13 @@
 	<string name="permission_disagree">拒绝</string>
 	
 	<!-- login  -->
+    <string name="register_login">登录／注册</string>
     <string name="register">注册</string>
     <string name="user_register">用户注册</string>
     <string name="forget_passwd">忘记密码</string>
 	<string name="login">登录</string>
-	<string name="login_fail_title">登录失败！</string>
+    <string name="quick_login">退出登录</string>
+    <string name="login_fail_title">登录失败！</string>
 	<string name="login_auth_denied">由于权限不足，您此次登录失败</string>
 	<string name="login_fail_net">由于网络原因，您此次登录失败</string>
 	<string name="login_user_cancel">您取消了此次登录！</string>

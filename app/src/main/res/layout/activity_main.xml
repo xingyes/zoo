@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="首页"/>
+                android:text="@string/tab_txt_0"/>
         </LinearLayout>
 
         <LinearLayout
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="专家出诊表"/>
+                android:text="@string/tab_txt_1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="在线咨询"/>
+                android:text="@string/tab_txt_2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="我的中心"/>
+                android:text="@string/tab_txt_3"/>
         </LinearLayout>
     </LinearLayout>
 

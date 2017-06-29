@@ -1,25 +1,101 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/c_FFFFFF"
+    android:orientation="vertical">
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:id="@+id/my_center_nav"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="我的中心"
-        android:textSize="50dp"/>
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/tab_txt_3"
+        tools:leftVisible="false"
+        tools:rightImg="@mipmap/icon_setting"/>
 
-    <TextView
-        android:textSize="20dp"
-        android:layout_marginBottom="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/button_brown"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="335dp"
-        android:layout_height="57dp"
-        android:gravity="center"
-        android:id="@+id/go_login"
-        android:text="@string/login"
-        android:textColor="@drawable/hospital_text_color_state"/>
-</RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/user_imv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+            <TextView
+                android:id="@+id/user_name"
+            android:layout_toRightOf="@id/user_imv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="@color/c_474747"
+            android:text="@string/register_login"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_verify"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_medic_history"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_doctors"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_medic_record"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_check_report"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        <include layout="@layout/key_arrow_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/my_pic_record"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/c_C8C7CC"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

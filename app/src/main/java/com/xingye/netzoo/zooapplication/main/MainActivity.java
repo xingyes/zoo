@@ -9,9 +9,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.main.mycenter.MyCenterFragment;
-import com.xingye.netzoo.zooapplication.main.online.OnlineFragment;
+import com.xingye.netzoo.zooapplication.mycenter.MyCenterFragment;
+import com.xingye.netzoo.zooapplication.online.OnlineFragment;
 import com.xingye.netzoo.zooapplication.outcall.OutcallFragment;
 
 
@@ -36,6 +37,7 @@ public class MainActivity extends Activity{
 
     private int tab_idx = R.id.tab_0;
     public static final String TAB_TARGET = "TAB_TARGET";
+    private long pressbackTime = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent =  getIntent();
@@ -150,6 +152,18 @@ public class MainActivity extends Activity{
             tab_idx = intent.getIntExtra(TAB_TARGET,R.id.tab_0);
             tabClickListener.onClick(findViewById(tab_idx));
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        long presstime = System.currentTimeMillis();
+        if(pressbackTime<0 || presstime - pressbackTime > 3000)
+            UiUtils.makeToast(this,"再按一次退出应用");
+        else
+            super.onBackPressed();
+
+        pressbackTime = presstime;
 
     }
 }

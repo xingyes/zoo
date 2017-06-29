@@ -17,9 +17,10 @@ import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.main.MainActivity;
 
+import io.realm.Realm;
+
 
 public class LoginActivity extends Activity implements View.OnClickListener{
-
 
     public class EditGroup
     {
@@ -30,6 +31,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
     private EditGroup nameGp;
     private EditGroup passwdGp;
+    private Realm     realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +131,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.user_register).setOnClickListener(this);
         findViewById(R.id.submit_btn).setOnClickListener(this);
         findViewById(R.id.passwd_visiable).setOnClickListener(this);
+
+
     }
 
 
@@ -166,7 +170,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
     private void goLogin()
     {
-        String name = nameGp.editv.getText().toString();
+        final String name = nameGp.editv.getText().toString();
         if(TextUtils.isEmpty(name)) {
             UiUtils.makeToast(this, "请输入账号名");
             return;
@@ -177,12 +181,37 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             return;
         }
 
+        if(realm==null)
+            realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                LoginUser user = realm.createObject(LoginUser.class);
+                user.setId("1");
+                user.setName(name);
+                user.setPhone(name);
+                user.setHeadimg("http://m.vstou.com/img/201511/hk3_6.jpg");
+            }
+        }, new Realm.Transaction.Callback(){
+            @Override
+            public void onSuccess() {
+//                UiUtils.startActivity(LoginActivity.this, MainActivity.class,true);
+                finish();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                UiUtils.makeToast(LoginActivity.this,"登陆失败");
+            }
+        });
+
         /**
          *  send net request
          */
 
-        UiUtils.startActivity(LoginActivity.this, MainActivity.class,true);
-        finish();
+
     }
+
+
 
 }

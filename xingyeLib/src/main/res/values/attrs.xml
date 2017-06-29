@@ -20,6 +20,8 @@
         <attr name="leftVisible" format="boolean"/>
 
         <attr name="rightText" format="string"/>
+        <attr name="rightImg" format="reference"/>
+
         <attr name="rightTextSize" format="dimension"/>
         <attr name="rightTextColor" format="color"/>
         <attr name="rightTextStyle" format="reference"/>

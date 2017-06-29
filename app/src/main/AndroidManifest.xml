@@ -50,6 +50,8 @@
         <activity android:name=".outcall.OutcallDocActivity"/>
         <activity android:name=".outcall.DocDetailActivity"/>
 
+        <activity android:name=".mycenter.SettingActivity"/>
+        <activity android:name=".mycenter.MedicHistoryActivity"/>
 
     </application>
 

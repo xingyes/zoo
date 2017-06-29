@@ -358,7 +358,7 @@ public class UserRegisterActivity extends Activity implements View.OnClickListen
          *  send net request
          */
 
-        UiUtils.startActivity(UserRegisterActivity.this, LoginActivity.class,true);
+//        UiUtils.startActivity(UserRegisterActivity.this, LoginActivity.class,true);
         finish();
     }
 

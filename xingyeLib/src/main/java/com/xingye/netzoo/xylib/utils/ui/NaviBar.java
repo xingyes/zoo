@@ -94,8 +94,11 @@ public class NaviBar extends RelativeLayout {
 //        int rightTextSize = a.getDimensionPixelSize(R.styleable.TitleView_rightTextSize, getResources().getDimensionPixelSize(R.dimen.text_size_14sp));
         int rightTextColor = a.getColor(R.styleable.NaviBar_rightTextColor, Color.WHITE);
         int rightTextStyleID = a.getResourceId(R.styleable.NaviBar_rightTextStyle, -1);
+        int rightImgRid = a.getResourceId(R.styleable.NaviBar_rightImg, -1);
+
         a.recycle();
         setRightText(rightTitle);
+        setRightResource(rightImgRid);
         setRightTextColor(rightTextColor);
         setRightTextStyle(context, rightTextStyleID);
 //        setRightTextSize(TypedValue.COMPLEX_UNIT_PX, rightTextSize);
@@ -257,8 +260,8 @@ public class NaviBar extends RelativeLayout {
 
 
     public void setRightResource(int resourceId) {
-        if (rightTv != null) {
-            rightTv.setBackgroundResource(resourceId);
+        if (rightImv != null && resourceId>=0) {
+            rightImv.setBackgroundResource(resourceId);
         }
     }
 
