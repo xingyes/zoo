@@ -26,6 +26,7 @@ import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.bookregister.BookRegisterActivity;
 import com.xingye.netzoo.zooapplication.hospital.HospitalInfoActivity;
 import com.xingye.netzoo.zooapplication.medicreport.ReportQueryActivity;
+import com.xingye.netzoo.zooapplication.medicsuggest.SuggestCatelistActivity;
 import com.xingye.netzoo.zooapplication.utils.Config;
 
 import java.io.IOException;
@@ -97,7 +98,10 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
                         break;
                     case 2:
                         UiUtils.startActivity(MainFragment.this.getActivity(), ReportQueryActivity.class,true);
-
+                        break;
+                    case 8:
+                        UiUtils.startActivity(MainFragment.this.getActivity(), SuggestCatelistActivity.class,true);
+                        break;
                     default:
                         break;
                 }

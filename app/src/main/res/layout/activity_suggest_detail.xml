@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_FAFAFA"
+    android:orientation="vertical">
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:layout_alignParentTop="true"
+        android:id="@+id/suggest_detail_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="@string/entrance_8"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_quest"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/c_474747"
+            android:text="疲倦" />
+    </RelativeLayout>
+
+    <EditText
+        android:focusable="false"
+        android:inputType="none"
+        android:id="@+id/symptom"
+        android:gravity="left|top"
+        android:textColor="@color/c_474747"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16dp"
+        android:text="身体经常感觉疲倦，有气无力注意力无法集中"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/icon_suggest"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#474747"
+            android:text="调养指导" />
+    </RelativeLayout>
+    <EditText
+        android:focusable="false"
+        android:inputType="none"
+        android:id="@+id/suggestion"
+        android:gravity="left|top"
+        android:textColor="@color/c_474747"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16dp"
+        android:text="赶紧打鸡血"/>
+
+
+</LinearLayout>
