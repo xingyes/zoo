@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,12 +6,31 @@
     android:orientation="vertical">
 
     <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:layout_alignParentTop="true"
         android:id="@+id/title_img_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:bgcolor="#5E4D3F"/>
 
+    <TextView
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_brown"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="335dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:id="@+id/submit_btn"
+        android:text="@string/btn_submit"
+        android:textColor="@drawable/hospital_text_color_state"/>
+
     <ScrollView
+        android:layout_above="@id/submit_btn"
+        android:layout_below="@id/title_img_nav"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
@@ -26,8 +45,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentLeft="true"
                 android:id="@+id/pre_title_imgv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_centerVertical="true"/>
             <TextView
                 android:id="@+id/title_v"
@@ -65,7 +84,8 @@
             android:scaleType="fitXY"
             android:src="@mipmap/banner_photo"
             android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

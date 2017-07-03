@@ -60,7 +60,7 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         View view = findViewById(R.id.name_info);
         nameGp.keyv = (TextView)view.findViewById(R.id.info_key);
         nameGp.editv = (EditText) view.findViewById(R.id.info_edit);
-        nameGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        nameGp.delv = (ImageView)view.findViewById(R.id.info_func);
         nameGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +71,7 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         view = findViewById(R.id.phone_info);
         phoneGp.keyv = (TextView)view.findViewById(R.id.info_key);
         phoneGp.editv = (EditText) view.findViewById(R.id.info_edit);
-        phoneGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        phoneGp.delv = (ImageView)view.findViewById(R.id.info_func);
         phoneGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +82,7 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         view = findViewById(R.id.personid_info);
         IDGp.keyv = (TextView)view.findViewById(R.id.info_key);
         IDGp.editv = (EditText) view.findViewById(R.id.info_edit);
-        IDGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        IDGp.delv = (ImageView)view.findViewById(R.id.info_func);
         IDGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +93,7 @@ public class PatientEditActivity extends Activity implements View.OnClickListene
         view = findViewById(R.id.medicid_info);
         medicIdGp.keyv = (TextView)view.findViewById(R.id.info_key);
         medicIdGp.editv = (EditText) view.findViewById(R.id.info_edit);
-        medicIdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        medicIdGp.delv = (ImageView)view.findViewById(R.id.info_func);
         medicIdGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

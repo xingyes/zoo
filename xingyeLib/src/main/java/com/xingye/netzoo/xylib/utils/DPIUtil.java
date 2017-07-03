@@ -185,5 +185,10 @@ public class DPIUtil {
     }
 
 
+    public static int getHeightWithOutNotifyBar()
+    {
+        return getDefaultDisplay().getHeight() - dip2px(25);
+    }
+
 
 }

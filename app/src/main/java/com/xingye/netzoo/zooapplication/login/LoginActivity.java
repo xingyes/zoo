@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
-import com.xingye.netzoo.zooapplication.main.MainActivity;
 
 import io.realm.Realm;
 
@@ -50,7 +49,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         View view = findViewById(R.id.login_name);
         nameGp.keyv = (TextView)view.findViewById(R.id.info_key);
         nameGp.editv = (EditText)view.findViewById(R.id.info_edit);
-        nameGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        nameGp.delv = (ImageView)view.findViewById(R.id.info_func);
         nameGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +88,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         passwdGp.keyv = (TextView)view.findViewById(R.id.info_key);
         passwdGp.editv = (EditText)view.findViewById(R.id.info_edit);
         passwdGp.keyv.setText(R.string.password);
-        passwdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        passwdGp.delv = (ImageView)view.findViewById(R.id.info_func);
         passwdGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

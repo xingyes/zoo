@@ -58,6 +58,14 @@
 
         <activity android:name=".medicsuggest.SuggestCatelistActivity"/>
         <activity android:name=".medicsuggest.SuggestDetailActivity"/>
+
+        <activity android:name=".reserve.ReserveChooseActivity"/>
+        <activity android:name=".reserve.ReservePrescriptionListActivity"/>
+        <activity android:name=".reserve.ReseverTitleImvSubmitActivity"/>
+        <activity android:name=".reserve.ReseverDetailActivity"/>
+        <activity android:name=".reserve.ReseverPayActivity"/>
+
+        <activity android:name=".utils.SingleImgCheckActivity"/>
     </application>
 
 </manifest>

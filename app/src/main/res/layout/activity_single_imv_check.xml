@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_FAFAFA"
+    android:orientation="vertical">
+
+
+    <com.xingye.netzoo.xylib.utils.ui.ZoomImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content_imv"/>
+
+    <com.xingye.netzoo.xylib.utils.ui.NaviBar
+        android:layout_alignParentTop="true"
+        android:id="@+id/single_imv_check_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:bgcolor="#5E4D3F"
+        tools:titleText="查看图片"/>
+
+</RelativeLayout>

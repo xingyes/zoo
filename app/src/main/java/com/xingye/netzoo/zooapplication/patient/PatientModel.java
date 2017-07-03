@@ -28,7 +28,7 @@ public class PatientModel implements Parcelable {
     }
     @Override
     public int describeContents() {
-        return 0;
+        return 4;
     }
 
     @Override

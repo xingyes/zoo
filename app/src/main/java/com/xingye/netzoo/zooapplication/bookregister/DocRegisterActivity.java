@@ -49,11 +49,11 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
 
         View time = findViewById(R.id.time_0);
         timeG0.keyv= (TextView)time.findViewById(R.id.info_key);
-        timeG0.btnv= (TextView) time.findViewById(R.id.info_del);
+        timeG0.btnv= (TextView) time.findViewById(R.id.info_func);
 
         time = findViewById(R.id.time_1);
         timeG1.keyv= (TextView)time.findViewById(R.id.info_key);
-        timeG1.btnv= (TextView) time.findViewById(R.id.info_del);
+        timeG1.btnv= (TextView) time.findViewById(R.id.info_func);
         timeG0.btnv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

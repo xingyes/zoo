@@ -1,4 +1,4 @@
-package com.xingye.netzoo.zooapplication.hospital;
+package com.xingye.netzoo.zooapplication.reserve;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,10 +16,11 @@ import com.xingye.netzoo.xylib.utils.DPIUtil;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.hospital.TitleImgActivity;
 import com.xingye.netzoo.zooapplication.utils.SingleImgCheckActivity;
 
 
-public class TitleImgActivity extends Activity implements View.OnClickListener{
+public class ReseverTitleImvSubmitActivity extends Activity implements View.OnClickListener{
 
     private TextView     titlev;
     private TextView     briefv;
@@ -31,13 +32,12 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
     public static String TITLE_IMG = "TITLE_IMG";
     public static String BRIEF_TXT = "BRIEF_TXT";
     public static String IMG_URL = "IMG_URL";
-    public static String IMG_RID = "IMG_RID";
     private int       titlePreImgRid;
     private String    navTxt;
     private String    titleTxt;
     private String    briefTxt;
     private String    imgUrl;
-    private int       imgRid;
+    private TextView  submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,9 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
                                                 finish();
                                            }
                                        });
+        submitBtn = (TextView)findViewById(R.id.submit_btn);
+        submitBtn.setVisibility(View.VISIBLE);
+        submitBtn.setOnClickListener(this);
 
         titleimv = (ImageView)findViewById(R.id.pre_title_imgv);
         titlev = (TextView)findViewById(R.id.title_v);
@@ -69,7 +72,6 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
         titleTxt = intent.getStringExtra(TITLE_TXT);
         titlePreImgRid = intent.getIntExtra(TITLE_IMG,-1);
         briefTxt = intent.getStringExtra(BRIEF_TXT);
-        imgRid = intent.getIntExtra(IMG_RID,-1);
         imgUrl = intent.getStringExtra(IMG_URL);
         naviBar.setTitle(navTxt);
         titlev.setText(titleTxt);
@@ -82,17 +84,7 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
 
         Bitmap bitmap;
         ViewGroup.LayoutParams lp = imgv.getLayoutParams();
-        if(imgRid>=0)
-        {
-            imgUrl = "res:///" + imgRid;
-            UiUtils.setControllerListener(imgv,imgUrl,DPIUtil.getWidth()-20);
-
-//            bitmap = BitmapFactory.decodeResource(getResources(),imgRid);
-//            lp.width = DPIUtil.getWidth()-20;
-//            lp.height = bitmap.getHeight()*lp.width/bitmap.getWidth();
-//            imgv.setLayoutParams(lp);
-//            imgv.setImageURI(imgUrl);
-        }else if(!TextUtils.isEmpty(imgUrl))
+        if(!TextUtils.isEmpty(imgUrl))
         {
             UiUtils.setControllerListener(imgv,imgUrl,DPIUtil.getWidth()-20);
         }
@@ -113,9 +105,11 @@ public class TitleImgActivity extends Activity implements View.OnClickListener{
         {
             case R.id.info_imv:
                 bundle.putString(SingleImgCheckActivity.IMG_URL,imgUrl);
-                UiUtils.startActivity(TitleImgActivity.this,SingleImgCheckActivity.class,bundle,true);
-
+                UiUtils.startActivity(this,SingleImgCheckActivity.class,bundle,true);
                 break;
+            case R.id.submit_btn:
+                bundle.putInt(ReserveModel.RESERVE_TYPE,ReserveModel.RESERVE_PRESCRIP);
+                UiUtils.startActivity(ReseverTitleImvSubmitActivity.this,ReseverDetailActivity.class,bundle,true);
             default:
                 break;
         }

@@ -43,6 +43,7 @@
     <string name="register_fee">预约费</string>
 
     <string name="patient_manage">就诊人管理</string>
+    <string name="patient">就诊人</string>
     <string name="sure_submit">确认提交</string>
 
     <string name="person_name">姓名</string>
@@ -96,6 +97,34 @@
     <string name="pic_record_x">X光报告</string>
     <string name="pic_record_b">B超报告</string>
     <string name="recode_choose">报告选择</string>
+
+    <string name="medic_plaster">帖敷</string>
+    <string name="china_prescirption">处方中药</string>
+    <string name="for_boil">中药煎煮</string>
+    <string name="preparation">中药制剂</string>
+    <string name="china_patent_medicine">中成药</string>
+
+    <string name="spring_plaster">春分帖敷</string>
+    <string name="summer_plaster">三伏帖敷</string>
+    <string name="autumn_plaster">金秋帖敷</string>
+    <string name="winter_plaster">三九帖敷</string>
+    <string name="x_choose">%s选择</string>
+    <string name="reserve_detail">预约详情</string>
+
+    <string name="reserve_time">预约时间</string>
+    <string name="serve_count">服务次数</string>
+    <string name="medic_fee">医药费用</string>
+    <string name="deliver_fee">配送费用</string>
+    <string name="prescrip_doc">处方医生</string>
+    <string name="total_fee">合计</string>
+
+    <string name="pay_info">支付信息</string>
+    <string name="pay_way">支付方式</string>
+    <string name="pay_ok">确认支付</string>
+
+    <string name="alipay">支付宝支付</string>
+    <string name="weixinpay">微信支付</string>
+    <string name="unionpay">银联支付</string>
 
     <string name="parser_error_msg">抱歉，服务暂时抛锚了，正在奋力解决！</string>
     <string name="network_error">网络开小差，稍后再试</string>

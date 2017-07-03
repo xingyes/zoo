@@ -88,7 +88,7 @@ public class ResetPasswdActivity extends Activity implements View.OnClickListene
         phoneGp.editv = (EditText)view.findViewById(R.id.info_edit);
         phoneGp.keyv.setText(R.string.phone_num);
         phoneGp.editv.setHint(R.string.hint_phone_num);
-        phoneGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        phoneGp.delv = (ImageView)view.findViewById(R.id.info_func);
         phoneGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +124,7 @@ public class ResetPasswdActivity extends Activity implements View.OnClickListene
         view = findViewById(R.id.verifycode);
         verifyGp.keyv = (TextView)view.findViewById(R.id.info_key);
         verifyGp.editv = (EditText)view.findViewById(R.id.info_edit);
-        verifyGp.btn = (TextView) view.findViewById(R.id.info_del);
+        verifyGp.btn = (TextView) view.findViewById(R.id.info_func);
         verifyGp.btn.setText(R.string.verify_code_get);
         verifyGp.btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +139,7 @@ public class ResetPasswdActivity extends Activity implements View.OnClickListene
         passwdGp.editv = (EditText)view.findViewById(R.id.info_edit);
         passwdGp.keyv.setText(R.string.password);
         passwdGp.editv.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        passwdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        passwdGp.delv = (ImageView)view.findViewById(R.id.info_func);
         passwdGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,7 +169,7 @@ public class ResetPasswdActivity extends Activity implements View.OnClickListene
                     passwdGp.delv.setVisibility(View.INVISIBLE);
             }
         });
-        passwdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        passwdGp.delv = (ImageView)view.findViewById(R.id.info_func);
         passwdGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,7 +182,7 @@ public class ResetPasswdActivity extends Activity implements View.OnClickListene
         repasswdGp.editv = (EditText)view.findViewById(R.id.info_edit);
         repasswdGp.keyv.setText(R.string.re_password);
         repasswdGp.editv.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        repasswdGp.delv = (ImageView)view.findViewById(R.id.info_del);
+        repasswdGp.delv = (ImageView)view.findViewById(R.id.info_func);
         repasswdGp.delv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
