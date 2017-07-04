@@ -11,6 +11,8 @@ import com.xingye.netzoo.xylib.utils.ToolUtil;
 import com.xingye.netzoo.xylib.utils.ui.NaviBar;
 import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
+import com.xingye.netzoo.zooapplication.mycenter.DoctorHistoryActivity;
+import com.xingye.netzoo.zooapplication.outcall.DocDetailActivity;
 
 
 public class DocRegisterActivity extends Activity implements View.OnClickListener{
@@ -70,6 +72,7 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
             }
         });
 
+        findViewById(R.id.item_doctor).setOnClickListener(this);
 
         doctor = new DoctorModel();
         doctor.title = "副主任";
@@ -92,6 +95,15 @@ public class DocRegisterActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId())
+        {
+            case R.id.item_doctor:
+                Bundle bundle = new Bundle();
+                bundle.putString(DocDetailActivity.DOC_ID,"1121212");
+                UiUtils.startActivity(this,DocDetailActivity.class,bundle,true);
+               break;
+            default:
+                break;
+        }
     }
 }

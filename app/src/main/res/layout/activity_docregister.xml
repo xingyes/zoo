@@ -12,7 +12,8 @@
         tools:bgcolor="#5E4D3F"
         tools:titleText="@string/entrance_0"/>
 
-    <include layout="@layout/item_doctor"/>
+    <include layout="@layout/item_doctor"
+        android:id="@+id/item_doctor"/>
 
     <View
         android:layout_width="match_parent"

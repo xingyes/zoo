@@ -14,6 +14,8 @@ import com.xingye.netzoo.xylib.utils.ui.UiUtils;
 import com.xingye.netzoo.zooapplication.R;
 import com.xingye.netzoo.zooapplication.bookregister.DoctorModel;
 import com.xingye.netzoo.zooapplication.login.LoginUser;
+import com.xingye.netzoo.zooapplication.outcall.DocDetailActivity;
+import com.xingye.netzoo.zooapplication.outcall.OutcallDocActivity;
 
 import java.util.ArrayList;
 
@@ -45,7 +47,9 @@ public class DoctorHistoryActivity extends Activity{
         doctorAdapter = new Result3tvAdapter(new Result3tvAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object tag) {
-
+                Bundle bundle = new Bundle();
+                bundle.putString(DocDetailActivity.DOC_ID,"1121212");
+                UiUtils.startActivity(DoctorHistoryActivity.this,DocDetailActivity.class,bundle,true);
             }
         });
         doctorRecyclerV.setAdapter(doctorAdapter);
