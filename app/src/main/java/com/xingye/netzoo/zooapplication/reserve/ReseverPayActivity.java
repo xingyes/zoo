@@ -76,6 +76,7 @@ public class ReseverPayActivity extends Activity implements View.OnClickListener
         alipay.tv = (TextView)view.findViewById(R.id.info_key);
         alipay.imv = (ImageView)view.findViewById(R.id.info_icon);
         alipay.paycheck = (CheckBox) view.findViewById(R.id.info_check);
+        alipay.paycheck.setClickable(false);
 
         wxpay = new PaywayHolder();
         view = findViewById(R.id.wxpay_layout);
@@ -83,6 +84,7 @@ public class ReseverPayActivity extends Activity implements View.OnClickListener
         wxpay.tv = (TextView)view.findViewById(R.id.info_key);
         wxpay.imv = (ImageView)view.findViewById(R.id.info_icon);
         wxpay.paycheck = (CheckBox) view.findViewById(R.id.info_check);
+        wxpay.paycheck.setClickable(false);
 
         unionpay = new PaywayHolder();
         view = findViewById(R.id.unionpay_layout);
@@ -90,6 +92,7 @@ public class ReseverPayActivity extends Activity implements View.OnClickListener
         unionpay.tv = (TextView)view.findViewById(R.id.info_key);
         unionpay.imv = (ImageView)view.findViewById(R.id.info_icon);
         unionpay.paycheck = (CheckBox) view.findViewById(R.id.info_check);
+        unionpay.paycheck.setClickable(false);
 
         alipay.tv.setText(R.string.alipay);
         wxpay.tv.setText(R.string.weixinpay);

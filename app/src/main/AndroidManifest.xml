@@ -40,7 +40,8 @@
         <activity android:name=".hospital.HospitalInfoActivity"/>
         <activity android:name=".hospital.HospitalGuideActivity"/>
         <activity android:name=".hospital.TitleImgActivity"/>
-        <activity android:name=".main.MainActivity"/>
+        <activity android:name=".main.MainActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".login.UserRegisterActivity"/>
         <activity android:name=".login.ResetPasswdActivity"/>

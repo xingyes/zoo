@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -133,6 +134,10 @@ public class MainActivity extends Activity{
 
         tab_idx = intent.getIntExtra(TAB_TARGET,R.id.tab_0);
         tabClickListener.onClick(findViewById(tab_idx));
+
+
+        int mode= WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
+        getWindow().setSoftInputMode(mode);
     }
 
 

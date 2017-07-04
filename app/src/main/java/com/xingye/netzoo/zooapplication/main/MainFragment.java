@@ -100,6 +100,9 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
                     case 2:
                         UiUtils.startActivity(MainFragment.this.getActivity(), ReportQueryActivity.class,true);
                         break;
+                    case 3:
+                        UiUtils.startActivity(MainFragment.this.getActivity(), HospitalInfoActivity.class,false);
+                        break;
                     case 5:
                         UiUtils.startActivity(MainFragment.this.getActivity(),ReserveChooseActivity.class,true);
                         break;
